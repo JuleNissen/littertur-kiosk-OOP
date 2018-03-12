@@ -207,7 +207,8 @@ public class ApplicationUI
         }
         else
         {
-            System.out.println("Could not find any Finn meg in publication list");
+            System.out.println("Could not find any publications named: " 
+            + "Finn meg" + "in publication list");
         }
     }
     
@@ -238,7 +239,8 @@ public class ApplicationUI
         }
         else
         {
-            System.out.println("Could not find any Finn meg in publication list");
+            System.out.println("Could not find any publications named: " 
+            + title + " in publication list");
         }
     }
 }
