@@ -149,8 +149,6 @@ public class ApplicationUI
         register.listAllPublications();
     }
 
-
-
     /**
      * Add a new product/literature to the register.
      * In this method you have to add code to ask the
@@ -212,6 +210,7 @@ public class ApplicationUI
         }
     }
     
+    
     /**
      * Search and print publication given by user.
      * If method does not find publication with same name will print
@@ -239,8 +238,8 @@ public class ApplicationUI
         }
         else
         {
-            System.out.println("Could not find any publications named: " 
-            + title + " in publication list");
+            System.out.println("Could not find any publications named'" 
+            + title + "' in publication list");
         }
     }
 }
