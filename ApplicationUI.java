@@ -149,8 +149,6 @@ public class ApplicationUI
         register.listAllPublications();
     }
 
-
-
     /**
      * Add a new product/literature to the register.
      * In this method you have to add code to ask the
@@ -192,25 +190,9 @@ public class ApplicationUI
      */
     private void findPublicationFinnmeg()
     {
-        Iterator<Publications> foundPublicationIt = 
-            register.findAllPublicationsByTitle("Finn meg");
-        //Print all found persons
-        if (foundPublicationIt.hasNext())
-        {
-            while (foundPublicationIt.hasNext())
-            {
-                Publications p = foundPublicationIt.next();
-                System.out.println("Found: " 
-                    + p.getTitle() + ", "
-                    + p.getAuthor());
-            }
-        }
-        else
-        {
-            System.out.println("Could not find any publications named: " 
-            + "Finn meg" + "in publication list");
-        }
+        register.findPublicationFinnMeg();
     }
+    
     
     /**
      * Search and print publication given by user.
@@ -232,15 +214,17 @@ public class ApplicationUI
             while (foundPublicationIt.hasNext())
             {
                 Publications p = foundPublicationIt.next();
-                System.out.println("Found: " 
-                    + p.getTitle() + ", "
+                System.out.println("Found:\n"
+                    + "Title: "
+                    + p.getTitle() 
+                    + ", Auhor: "
                     + p.getAuthor());
             }
         }
         else
         {
-            System.out.println("Could not find any publications named: " 
-            + title + " in publication list");
+            System.out.println("Could not find any publications named'" 
+            + title + "' in publication list");
         }
     }
 }
