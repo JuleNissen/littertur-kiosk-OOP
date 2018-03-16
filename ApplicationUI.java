@@ -178,7 +178,7 @@ public class ApplicationUI
      * Then, upon return from the register, you need
      * to print the details of the found item.
      */
-    private void findPublicationsWithTitle()
+    private void findAllPublicationsWithTitle()
     {
         System.out.println("Find publication with ");
         register.findAllPublicationsByTitle(""); //parameter må fikses før bruk
@@ -190,7 +190,7 @@ public class ApplicationUI
      */
     private void findPublicationFinnmeg()
     {
-        register.findPublicationFinnMeg();
+        register.findAllPublicationFinnMeg();
     }
     
     
@@ -201,30 +201,10 @@ public class ApplicationUI
      */
     private void findPublicationUserDefined()
     {
-        System.out.println("addNewProduct() was called");
-        System.out.println("Please enter title");
+        System.out.println("Please enter title to search for");
         Scanner reader = new Scanner(System.in);
         String title = Input.next();
         
-        Iterator<Publications> foundPublicationIt = 
-            register.findAllPublicationsByTitle(title);
-        //Print all found persons
-        if (foundPublicationIt.hasNext())
-        {
-            while (foundPublicationIt.hasNext())
-            {
-                Publications p = foundPublicationIt.next();
-                System.out.println("Found:\n"
-                    + "Title: "
-                    + p.getTitle() 
-                    + ", Auhor: "
-                    + p.getAuthor());
-            }
-        }
-        else
-        {
-            System.out.println("Could not find any publications named'" 
-            + title + "' in publication list");
-        }
+        register.printAllPublicationsWithTitle(title);
     }
 }

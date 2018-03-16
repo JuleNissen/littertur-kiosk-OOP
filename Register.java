@@ -44,8 +44,8 @@ public class Register
     public void addPublications(String title, String author, int yearPublished, 
     int monthPublished,int dayPublished)
     {
-        listOfPublications.add(new Publications (title,author,yearPublished,monthPublished,
-                dayPublished));
+        listOfPublications.add(new Publications (title,author,yearPublished,
+        monthPublished, dayPublished));
     }
 
     /**
@@ -97,7 +97,40 @@ public class Register
         return this.listOfPublications.iterator();
     }
 
-    public void findPublicationFinnMeg()
+        
+    /**
+     * Prints all publication found with same title.
+     * Prints title and authors.
+     */
+    public void printAllPublicationsWithTitle(String title)
+    {
+        Iterator<Publications> foundPublicationIt = 
+        findAllPublicationsByTitle(title);
+        //Print all found persons
+        if (foundPublicationIt.hasNext())
+        {
+            while (foundPublicationIt.hasNext())
+            {
+                Publications p = foundPublicationIt.next();
+                System.out.println("Found:\n"
+                    + "Title: "
+                    + p.getTitle() 
+                    + ", Auhor: "
+                    + p.getAuthor());
+            }
+        }
+        else
+        {
+            System.out.println("Could not find any publications named'" 
+            + title + "' in publication list");
+        }
+    }
+    
+    /**
+     * Prints all publication found with same title. "Finn meg"
+     * Prints title and authors.
+     */
+    public void findAllPublicationFinnMeg()
     {
         Iterator<Publications> foundPublicationIt = 
             findAllPublicationsByTitle("Finn meg");
@@ -135,7 +168,6 @@ public class Register
             {
                 found = rm;
             }
-
         }
 
         return found;
