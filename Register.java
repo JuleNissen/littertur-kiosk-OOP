@@ -29,7 +29,7 @@ public class Register
         listOfPublications.add(new Publications ("Selskap", "Solomon Grundy", 2015, 05, 10));
         listOfPublications.add(new Publications ("Finn meg", "FN 2187", 2015, 12, 16));
     }
-    
+
     /**
      * Test for adding publication using a user defined String
      */
@@ -45,28 +45,28 @@ public class Register
     int monthPublished,int dayPublished)
     {
         listOfPublications.add(new Publications (title,author,yearPublished,monthPublished,
-        dayPublished));
+                dayPublished));
     }
-    
+
     /**
      * List all publications in the registrer
      */
     public void listAllPublications()
     {
-       if(isEmpty())
-       {
-           System.out.println("Sorry, there are no publications available");
-       }
-       else
-       {
-        for(int index = 0; index < listOfPublications.size(); index++)
+        if(isEmpty())
         {
-            Publications rm = listOfPublications.get(index);
-            System.out.println(rm.summaryAsString());
+            System.out.println("Sorry, there are no publications available");
         }
-       }
+        else
+        {
+            for(int index = 0; index < listOfPublications.size(); index++)
+            {
+                Publications rm = listOfPublications.get(index);
+                System.out.println(rm.summaryAsString());
+            }
+        }
     }
-    
+
     /**
      * Search for publications by title using Iterator
      * @param title, the tile of publication you wish to search for
@@ -75,7 +75,7 @@ public class Register
     public Iterator<Publications> findAllPublicationsByTitle(String title)
     {
         ArrayList<Publications>  foundPublication = new ArrayList<Publications>();
-        
+
         for(Publications p : this.listOfPublications)
         {
             if (p.getTitle().equals(title))
@@ -83,10 +83,10 @@ public class Register
                 foundPublication.add(p);
             }
         }
-        
+
         return foundPublication.iterator();
     }
-    
+
     /**
      * Returns an iterator to the collection of Publications in the register.
      * Makes it possible for other objects to iterate over all the Publications in register.
@@ -96,7 +96,31 @@ public class Register
     {
         return this.listOfPublications.iterator();
     }
-    
+
+    public void findPublicationFinnMeg()
+    {
+        Iterator<Publications> foundPublicationIt = 
+            findAllPublicationsByTitle("Finn meg");
+        //Print all found persons
+        if (foundPublicationIt.hasNext())
+        {
+            while (foundPublicationIt.hasNext())
+            {
+                Publications p = foundPublicationIt.next();
+                System.out.println("Found:\n"
+                    + "Title: "
+                    + p.getTitle() 
+                    + ", Auhor: "
+                    + p.getAuthor());
+            }
+        }
+        else
+        {
+            System.out.println("Could not find any publications named'" 
+                + "Finn meg" + "' in publication list");
+        }
+    }
+
     /**
      * Searches for publications by title
      * @return string to search for title
@@ -111,20 +135,20 @@ public class Register
             {
                 found = rm;
             }
-            
+
         }
 
         return found;
     }
-    
+
     /**
      * Find and delete a publication by title
      * @return found publication to delete
      */
     public Publications removePublication(String title)
-    {       //Not currently in use
+    {
         Publications delete = null;
-        
+
         Iterator<Publications> it = this.listOfPublications.iterator();
         while ((null == delete) && (it.hasNext()))
         {
@@ -137,7 +161,7 @@ public class Register
         }
         return delete;
     }
-    
+
     /**
      * Return 'true' if the publication list is rempty
      * @Return 'true' if the publication list is rempty

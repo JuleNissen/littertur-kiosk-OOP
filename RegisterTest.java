@@ -57,7 +57,22 @@ public class RegisterTest
         assertEquals(false, register1.isEmpty());
     }
 
+
+    // @Test
+    // public void testDeleteFunc()
+    // {
+        // Register register1 = new Register();
+        // assertEquals(true, register1.isEmpty());
+        // register1.addPublicationsTest2("delete me!");
+        // assertEquals(false, register1.isEmpty());
+        // Publications publicat1 = register1.removePublication("delete me!");
+        // assertEquals(true, register1.isEmpty());
+    // }
+    
 }
+
+
+
 
 
 
