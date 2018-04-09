@@ -8,13 +8,17 @@
  */
 public class Books extends Publications
 {
-    private String title;
-    private String author; //Author of publicaion as String
-    private boolean released;
-    private boolean isInSeries;
+    private String title;   //Title as String
+    private String author;  //Author as String
+    private boolean released;   //Released as boolean
+    private boolean isInSeries; //isInSeries as boolean
 
     /**
      * Constructor for objects of class Books
+     * Title handled by super-class.
+     * Sets author to String "N/A".
+     * released if set to 'true' by default.
+     * isInSeries is set to 'false' by default.
      */
     public Books(String title)
     {

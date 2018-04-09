@@ -89,7 +89,7 @@ public class Publications
     
     /**
      *Prints details of Publication
-     * @return summary
+     * @Return summary
      */
     public String summaryAsString()
     {

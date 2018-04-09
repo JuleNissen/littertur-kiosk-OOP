@@ -3,5 +3,5 @@ comment0.target=Series_Book
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Series_Book\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=title\ author
 comment1.target=Series_Book(java.lang.String,\ java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Series_Book\r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Series_Book\r\n\ Title\ handled\ by\ super-class.\r\n\ Call\ inSeries\ in\ super-class\ to\ make\ it\ true.\r\n\ Calls\ setAuthor\ in\ super-class\ to\ add\ author.\r\n
 numComments=2

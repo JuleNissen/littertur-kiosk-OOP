@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Series_Book here.
  *
@@ -8,9 +7,11 @@
 public class Series_Book extends Books
 {
     
-    
     /**
      * Constructor for objects of class Series_Book
+     * Title handled by super-class.
+     * Call inSeries in super-class to make it true.
+     * Calls setAuthor in super-class to add author.
      */
     public Series_Book(String title, String author)
     {

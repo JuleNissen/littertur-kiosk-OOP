@@ -1,4 +1,3 @@
-
 /**
  * Book that is not in a series.
  * inherits from Books-class.
@@ -14,7 +13,7 @@ public class Single_Book extends Books
     
     /**
      * Constructor for objects of class Single_Book
-     * title worked by super-class.
+     * title handled by super-class.
      * Calls setAuthor in super-class to add author.
      * Set isInSeries to 'false', this is a singel book.
      */

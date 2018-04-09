@@ -23,5 +23,5 @@ comment7.params=publisher
 comment7.target=void\ setPublisher(java.lang.String)
 comment8.params=
 comment8.target=java.lang.String\ summaryAsString()
-comment8.text=\r\nPrints\ details\ of\ Publication\r\n\ @return\ summary\r\n
+comment8.text=\r\nPrints\ details\ of\ Publication\r\n\ @Return\ summary\r\n
 numComments=9
