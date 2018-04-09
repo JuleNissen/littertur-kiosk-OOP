@@ -11,7 +11,7 @@ public class Publications
     private int monthPublished;
     private int dayPublished;
     private int yearPublished;
-    private boolean subscribed;
+    private boolean subscribed; //Nødvendig?
     
     /**
      * Constructor for objects of class Publications.

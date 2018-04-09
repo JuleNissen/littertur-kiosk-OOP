@@ -1,33 +1,43 @@
 
 /**
- * Write a description of class Books here.
+ * Will contain books is able to check if it is released and/or in a series
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jahn-Willy & 
+ * @version 09.04.2018 (dd.mm.yyyy)
  */
 public class Books extends Publications
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String title;
+    private String author;
+    private boolean released;
+    private boolean isInSeries;
 
     /**
      * Constructor for objects of class Books
      */
-    public Books()
+    public Books(String title, String author)
     {
-        // initialise instance variables
-        x = 0;
+        super(title);
+        this.author = author;
+        released = true;
+        isInSeries = false;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Is the book released?
+     * @return true if book is released
      */
-    public int sampleMethod(int y)
+    private boolean isReleased()
     {
-        // put your code here
-        return x + y;
+        return released;
+    }
+    
+    /**
+     * Check if the book is in a series
+     * @return true is book is in a series
+     */
+    private boolean inSeries()
+    {
+        return isInSeries;
     }
 }
