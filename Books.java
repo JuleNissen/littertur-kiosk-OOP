@@ -35,6 +35,7 @@ public class Books extends Publications
     
     /**
      * Check if the book is in a series
+     * Defined version should return 'true'
      * @return true is book is in a series
      */
     public boolean inSeries()

@@ -1,21 +1,33 @@
 
 /**
- * Write a description of class Single_Book here.
+ * Book that is not in a series.
+ * inherits from Books-class.
+ * Redefines inSeries method.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jahn-Willy
+ * @version 9.4.2018 (dd.mm.yyyy)
  */
 public class Single_Book extends Books
 {
-    String coverType;
-
+    private boolean isInSeries;
+    
     /**
      * Constructor for objects of class Single_Book
      */
-    public Single_Book(String title)
+    public Single_Book(String title, String author)
     {
         super(title);
-        coverType = "Unknown";
+        super.setAuthor(author);
+        isInSeries = false;
     }
-
+    
+    /**
+     * Returns boolean for book is in series or not.
+     * Redefined version should return 'false'
+     * @Return false if not in series.
+     */
+    public boolean inSeries()
+    {
+        return isInSeries;
+    }
 }

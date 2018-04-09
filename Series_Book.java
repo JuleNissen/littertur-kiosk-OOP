@@ -7,10 +7,8 @@
  */
 public class Series_Book extends Books
 {
-    private String title;
-    private String author;
-    private boolean isInSeries;
-
+    
+    
     /**
      * Constructor for objects of class Series_Book
      */
@@ -19,7 +17,5 @@ public class Series_Book extends Books
         super(title);
         super.inSeries();
         super.setAuthor(author);
-        
     }
-
 }

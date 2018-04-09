@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Single_Book
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Single_Book\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=title
-comment1.target=Single_Book(java.lang.String)
+comment0.text=\r\n\ Book\ that\ is\ not\ in\ a\ series.\r\n\ inherits\ from\ Books-class.\r\n\ Redefines\ inSeries\ method.\r\n\r\n\ @author\ Jahn-Willy\r\n\ @version\ 9.4.2018\ (dd.mm.yyyy)\r\n
+comment1.params=title\ author
+comment1.target=Single_Book(java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Single_Book\r\n
-numComments=2
+comment2.params=
+comment2.target=boolean\ inSeries()
+comment2.text=\r\n\ Returns\ boolean\ for\ book\ is\ in\ series\ or\ not.\r\n\ Redefined\ version\ should\ return\ 'false'\r\n\ @Return\ false\ if\ not\ in\ series.\r\n
+numComments=3
