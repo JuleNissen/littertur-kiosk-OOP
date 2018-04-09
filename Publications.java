@@ -7,7 +7,7 @@
 public class Publications
 {
     private String title; //Title of publication as String
-    private String author; //Author of publicaion as String
+    protected String author; //Author of publicaion as String
     private int monthPublished;
     private int dayPublished;
     private int yearPublished;
