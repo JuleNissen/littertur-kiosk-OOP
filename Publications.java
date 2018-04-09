@@ -27,6 +27,10 @@ public class Publications
     /**
      * Constructor for objects of class Publications.
      * @param title of the publication
+     * @param author
+     * @param yearPublished
+     * @param monthPublished
+     * @param dayPublished
      */
     public Publications(String title, String author, int yearPublished, 
     int monthPublished,int dayPublished)
@@ -89,6 +93,7 @@ public class Publications
     
     /**
      *Prints details of Publication
+     * @return summary
      */
     public String summaryAsString()
     {
