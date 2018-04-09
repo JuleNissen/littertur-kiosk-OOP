@@ -9,6 +9,7 @@
 public class Books extends Publications
 {
     private String title;
+    private String author; //Author of publicaion as String
     private boolean released;
     private boolean isInSeries;
 
@@ -18,6 +19,7 @@ public class Books extends Publications
     public Books(String title)
     {
         super(title);
+        this.author = "N/A";
         released = true;
         isInSeries = false;
     }
@@ -37,12 +39,25 @@ public class Books extends Publications
      */
     public boolean inSeries()
     {
+        isInSeries = true;
         return isInSeries;
     }
     
-    public String revealAuthor()
+    /**
+     * Get author of publication
+     * @return author of publication
+     */
+    public String getAuthor()
     {
-        author = super.getAuthor();
-        return author;
+        return this.author;
+    }
+    
+    /**
+     * Sets the name of the author
+     * @param author of the publication
+     */ 
+    protected void setAuthor(String author)
+    {
+        this.author = author;
     }
 }

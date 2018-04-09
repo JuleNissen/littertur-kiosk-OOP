@@ -100,7 +100,7 @@ public class Register
         
     /**
      * Prints all publication found with same title.
-     * Prints title and authors.
+     * Prints title and publisher.
      */
     public void printAllPublicationsWithTitle(String title)
     {
@@ -115,8 +115,8 @@ public class Register
                 System.out.println("Found:\n"
                     + "Title: "
                     + p.getTitle() 
-                    + ", Auhor: "
-                    + p.getAuthor());
+                    + ", Published by: "
+                    + p.getPublisher());
             }
         }
         else
@@ -128,7 +128,7 @@ public class Register
     
     /**
      * Prints all publication found with same title. "Finn meg"
-     * Prints title and authors.
+     * Prints title and publisher.
      */
     public void findAllPublicationFinnMeg()
     {
@@ -143,8 +143,8 @@ public class Register
                 System.out.println("Found:\n"
                     + "Title: "
                     + p.getTitle() 
-                    + ", Auhor: "
-                    + p.getAuthor());
+                    + ", : "
+                    + p.getPublisher());
             }
         }
         else

@@ -41,18 +41,18 @@ public class PublicationsTest
     }
 
     @Test
-    public void testSetAndGetAuthor()
+    public void testSetAndGetPublisher()
     {
-        Publications publicat2 = new Publications("AuthorTest");
-        publicat2.setAuthor("Author Test");
-        assertEquals("Author Test", publicat2.getAuthor());
+        Publications publicat2 = new Publications("publisher Test");
+        publicat2.setPublisher("publisher Test");
+        assertEquals("publisher Test", publicat2.getPublisher());
     }
 
     @Test
     public void testConstructor()
     {
         Publications publicat1 = new Publications("testing Constructor");
-        assertEquals("N/A", publicat1.getAuthor());
+        assertEquals("N/A", publicat1.getPublisher());
         assertEquals("testing Constructor:N/A - 0/0/0", publicat1.summaryAsString());
     }
 

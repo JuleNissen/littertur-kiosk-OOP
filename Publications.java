@@ -7,7 +7,7 @@
 public class Publications
 {
     private String title; //Title of publication as String
-    protected String author; //Author of publicaion as String
+    private String publisher;
     private int monthPublished;
     private int dayPublished;
     private int yearPublished;
@@ -20,7 +20,7 @@ public class Publications
     public Publications(String title)
     {
         this.title = title;
-        this.author = "N/A";
+        this.publisher = "N/P";
         this.subscribed = false;
     }
 
@@ -32,11 +32,11 @@ public class Publications
      * @param monthPublished
      * @param dayPublished
      */
-    public Publications(String title, String author, int yearPublished, 
+    public Publications(String title, String publisher, int yearPublished, 
     int monthPublished,int dayPublished)
     {
         this.title = title;
-        this.author = author;
+        this.publisher = publisher;
         this.yearPublished = yearPublished;
         this.monthPublished = monthPublished;
         this.dayPublished = dayPublished;
@@ -49,7 +49,7 @@ public class Publications
      *@param monthPublished Month when the publication was first published
      *@param dayPublished Day when the publication was first published
      */
-    public void setDate(int yearPublished, int monthPublished,int dayPublished)
+    protected void setDate(int yearPublished, int monthPublished,int dayPublished)
     {
         this.yearPublished = yearPublished;
         this.monthPublished = monthPublished;
@@ -66,24 +66,6 @@ public class Publications
     }
     
     /**
-     * Get author of publication
-     * @return author of publication
-     */
-    public String getAuthor()
-    {
-        return this.author;
-    }
-    
-    /**
-     * Sets the name of the author
-     * @param author of the publication
-     */ 
-    public void setAuthor(String author)
-    {
-        this.author = author;
-    }
-    
-    /**
      *Signs a subscribtion for the Publication
      */
     public void subscribe()
@@ -92,11 +74,25 @@ public class Publications
     }
     
     /**
+     * get publisher as string
+     * @Return publisher as string
+     */
+    public String getPublisher()
+    {
+        return this.publisher;
+    }
+    
+    protected void setPublisher(String publisher)
+    {
+        this.publisher = publisher;
+    }
+    
+    /**
      *Prints details of Publication
      * @return summary
      */
     public String summaryAsString()
     {
-        return title+":"+author+" - "+yearPublished+"/"+monthPublished+"/"+dayPublished;
+        return title+":"+publisher+" - "+yearPublished+"/"+monthPublished+"/"+dayPublished;
     }
 }
