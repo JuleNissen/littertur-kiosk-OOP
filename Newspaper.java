@@ -1,11 +1,10 @@
 
 /**
  * Models a newspaper publication.
- *
  * @author Alejandro M T Grønhaug
- * @version 0.1
+ * @version 09.04.2018 (dd.mm.yyyy)
  */
-public class Newspaper
+public class Newspaper extends Periodicals
 {
     // instance variables - replace the example below with your own
     //private int x;
@@ -13,9 +12,11 @@ public class Newspaper
     /**
      * Constructor for objects of class Newspaper
      */
-    public Newspaper()
+    public Newspaper(String title)
     {
+        super(title);
     }
+
 
     /**
      * An example of a method - replace this comment with your own

@@ -2,9 +2,9 @@
 /**
  * Models a comic publication.
  * @author Alejandro M T Grønhaug
- * @version 0.1
+ * @version 09.04.2018 (dd.mm.yyyy)
  */
-public class Comics
+public class Comics extends Periodicals
 {
     // instance variables - replace the example below with your own
     //private int x;
@@ -12,8 +12,9 @@ public class Comics
     /**
      * Constructor for objects of class Comics
      */
-    public Comics()
+    public Comics(String title)
     {
+        super(title);
     }
 
     /**

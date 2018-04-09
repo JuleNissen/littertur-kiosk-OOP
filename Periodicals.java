@@ -4,18 +4,21 @@
  * ie something that is published periodically and has an issue number.
  *
  * @author Alejandro M T Grønhaug
- * @version 0.1
+ * @version 09.04.2018 (dd.mm.yyyy)
  */
-public abstract class Periodicals 
+public abstract class Periodicals extends Publications
 {
     // instance variables - replace the example below with your own
-    //private int issueNr;
+    private int issueNr;
 
     /**
      * Constructor for objects of class Periodicals
      */
-    public Periodicals()
+    public Periodicals(String title)
     {
+        super(title);
+        this.issueNr = issueNr;
+        //String perTitle = ;
     }
 
     /**
