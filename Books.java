@@ -1,6 +1,7 @@
 
 /**
- * Will contain books is able to check if it is released and/or in a series
+ * Will contain books either standalone or series.
+ * Is able to check if it is released and/or in a series
  *
  * @author Jahn-Willy & 
  * @version 09.04.2018 (dd.mm.yyyy)
@@ -8,17 +9,15 @@
 public class Books extends Publications
 {
     private String title;
-    private String author;
     private boolean released;
     private boolean isInSeries;
 
     /**
      * Constructor for objects of class Books
      */
-    public Books(String title, String author)
+    public Books(String title)
     {
         super(title);
-        this.author = author;
         released = true;
         isInSeries = false;
     }
@@ -27,7 +26,7 @@ public class Books extends Publications
      * Is the book released?
      * @return true if book is released
      */
-    private boolean isReleased()
+    public boolean isReleased()
     {
         return released;
     }
@@ -36,8 +35,14 @@ public class Books extends Publications
      * Check if the book is in a series
      * @return true is book is in a series
      */
-    private boolean inSeries()
+    public boolean inSeries()
     {
         return isInSeries;
+    }
+    
+    public String revealAuthor()
+    {
+        author = super.getAuthor();
+        return author;
     }
 }
