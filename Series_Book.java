@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Write a description of class Series_Book here.
  *
@@ -6,6 +8,7 @@
  */
 public class Series_Book extends Books
 {
+    private boolean isInSeries;
     
     /**
      * Constructor for objects of class Series_Book
@@ -16,7 +19,22 @@ public class Series_Book extends Books
     public Series_Book(String title, String author)
     {
         super(title);
-        super.inSeries();
         super.setAuthor(author);
+        isInSeries = true;
+    }
+    
+    protected void someThing(List<Books> newBooks)
+    {
+        inSeries();
+    }
+    
+    /**
+     * Returns boolean for book is in series or not.
+     * Redefined version should return 'false'
+     * @Return false if not in series.
+     */
+    public boolean inSeries()
+    {
+        return super.posInSeries();
     }
 }

@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Book that is not in a series.
  * inherits from Books-class.
@@ -22,8 +24,13 @@ public class Single_Book extends Books
         super(title);
         super.setAuthor(author);
         isInSeries = false;
-        edition = 0; //Book does not exist till contructor is done anyway.
-        IncrementEditionNr(); //If you want edition to start at 1 remove this line. 
+        edition = 1;
+    }
+    
+    protected void someThing(List<Books> newBooks)
+    {
+        inSeries();
+        getEdition();
     }
     
     /**
@@ -33,14 +40,14 @@ public class Single_Book extends Books
      */
     public boolean inSeries()
     {
-        return isInSeries;
+        return super.negInSeries();
     }
     
     /**
      * Return the book edition.
      * @Return the book edition.
      */
-    public int printEdition()
+    private int getEdition()
     {
         return edition;
     }
@@ -48,7 +55,7 @@ public class Single_Book extends Books
     /**
      * Increment edition number.
      */
-    public void IncrementEditionNr()
+    private void IncrementEditionNr()
     {
         this.edition ++;
         this.edition = edition;

@@ -1,3 +1,4 @@
+import java.util.List;
 
 /**
  * Will contain books either standalone or series.
@@ -6,10 +7,11 @@
  * @author Jahn-Willy & 
  * @version 09.04.2018 (dd.mm.yyyy)
  */
-public class Books extends Publications
+public abstract class Books extends Publications
 {
     private String title;   //Title as String
     private String author;  //Author as String
+    private String publisher; //Publisher as String
     private boolean released;   //Released as boolean
     private boolean isInSeries; //isInSeries as boolean
 
@@ -24,35 +26,62 @@ public class Books extends Publications
     {
         super(title);
         this.author = "N/A";
+        this.publisher = "N/P";
         released = true;
-        isInSeries = false;
     }
 
+    /**
+     * Abstract method for single and series book.
+     */
+    protected abstract void someThing(List<Books> newBooks);
+    
+    
     /**
      * Is the book released?
      * @return true if book is released
      */
-    public boolean isReleased()
+    protected boolean isReleased()
     {
         return released;
     }
     
     /**
-     * Check if the book is in a series
-     * Defined version should return 'true'
+     * Set book in series
+     * Will return true
      * @return true is book is in a series
      */
-    public boolean inSeries()
+    protected boolean posInSeries()
     {
         isInSeries = true;
         return isInSeries;
     }
     
     /**
+     * Set book NOT in series
+     * Will return false
+     * @return false for book in series
+     */
+    protected boolean negInSeries()
+    {
+        isInSeries = false;
+        return isInSeries;
+    }
+    
+    /**
+     * Returns boolean for book is in series or not.
+     * Redefined version should return 'false'
+     * @Return false if not in series.
+     */
+    public boolean inSeries(boolean isInSeries)
+    {
+        return this.isInSeries;
+    }
+    
+    /**
      * Get author of publication
      * @return author of publication
      */
-    public String getAuthor()
+    protected String getAuthor()
     {
         return this.author;
     }
@@ -64,5 +93,15 @@ public class Books extends Publications
     protected void setAuthor(String author)
     {
         this.author = author;
+    }
+    
+    /**
+     * Set the name of publisher
+     * @param publisher of book
+     */
+    protected void setBookPublisher(String publisher)
+    {
+        this.publisher = publisher; //hvorfor er denne linjen nødvendig?
+        setPublisher(this.publisher);
     }
 }
