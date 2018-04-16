@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -9,7 +10,8 @@ import java.util.Iterator;
  */
 public class Register
 {
-    Collection collection = new Collection();
+    private ArrayList<Single_Book> StandAloneBook;
+    private ArrayList<Series_Book> SeriesBooks;
     
     private ArrayList<Publications>  listOfPublications;
 
@@ -19,8 +21,22 @@ public class Register
     public Register()
     {
         this.listOfPublications = new ArrayList<Publications>();
+        this.StandAloneBook = new ArrayList<Single_Book>();
+        this.SeriesBooks = new ArrayList<Series_Book>();
     }
-
+    
+    /**
+     * Add Single_Book list to Publication list.
+     */
+    public void singelToPublication(int i, List<Single_Book> singleMap)
+    {
+        for(int index = 0; index < singleMap.size(); index++)
+        {
+            System.out.print(singleMap.get(index) + ": ");
+        }
+        System.out.println(i);
+    }
+    
     /**
      * Positive test for adding a publication to the list
      */
@@ -31,26 +47,34 @@ public class Register
         listOfPublications.add(new Publications ("Selskap", "Solomon Grundy", 2015, 05, 10));
         listOfPublications.add(new Publications ("Finn meg", "FN 2187", 2015, 12, 16));
     }
-
+    
     /**
-     * test adding books form UI though Register to Collection
+     * Adds new standalone book
+     * @param title for book
      */
     public void addStandAloneBooks()
     {
-        collection.addSingleBookPosiTest();
+        StandAloneBook.add(new Single_Book("StandAlone BookTitle", "StandAlone BookPublisher"));
+        StandAloneBook.add(new Single_Book("Single title", "single publisher"));
+    }
+    
+    /**
+     * Adds new series of books
+     * @param title for book
+     */
+    public void addSeriesBooks()
+    {
+        SeriesBooks.add(new Series_Book("Series title", "Series Publisher"));
+        SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union"));
     }
     
     public void listAllStandAloneBooks()
     {
-        collection.listAllStandAlone();
-    }
-    
-    /**
-     * adding books form UI though Register to Collection
-     */
-    public void addSeriesBooks()
-    {
-        collection.addSeriesBookPosiTest();
+        for(int index = 0; index < StandAloneBook.size(); index++)
+        {
+            Publications rm = StandAloneBook.get(index);
+            System.out.println(rm.summaryAsString());
+        }
     }
     
     /**
@@ -166,7 +190,7 @@ public class Register
                 System.out.println("Found:\n"
                     + "Title: "
                     + p.getTitle() 
-                    + ", : "
+                    + ", Author: "
                     + p.getPublisher());
             }
         }

@@ -52,8 +52,8 @@ public class PublicationsTest
     public void testConstructor()
     {
         Publications publicat1 = new Publications("testing Constructor");
-        assertEquals("N/A", publicat1.getPublisher());
-        assertEquals("testing Constructor:N/A - 0/0/0", publicat1.summaryAsString());
+        assertEquals("N/P", publicat1.getPublisher());
+        assertEquals("testing Constructor:N/P - 0/0/0", publicat1.summaryAsString());
     }
 
     @Test
@@ -61,7 +61,7 @@ public class PublicationsTest
     {
         Publications publicat2 = new Publications("fo");
         publicat2.setDate(1992, 4, 20);
-        assertEquals("fo:N/A - 1992/4/20", publicat2.summaryAsString());
+        assertEquals("fo:N/P - 1992/4/20", publicat2.summaryAsString());
     }
 }
 

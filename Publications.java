@@ -89,8 +89,6 @@ public class Publications
         this.publisher = publisher;
     }
     
-
-    
     /**
      *Prints details of Publication
      * @Return summary

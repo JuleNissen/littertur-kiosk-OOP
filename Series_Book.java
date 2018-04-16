@@ -1,13 +1,14 @@
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Write a description of class Series_Book here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jahn-Willy
+ * @version 16.04.2018 (dd.mm.yyyy)
  */
 public class Series_Book extends Books
 {
+    private HashMap<String, String> seriesMap;
     private boolean isInSeries;
     
     /**
@@ -21,12 +22,8 @@ public class Series_Book extends Books
         super(title);
         super.setAuthor(author);
         isInSeries = true;
+        seriesMap = new HashMap<>();
     }
-    
-    // protected void someThing(List<Books> newBooks)
-    // {
-        // inSeries();
-    // }
     
     /**
      * Returns boolean for book is in series or not.

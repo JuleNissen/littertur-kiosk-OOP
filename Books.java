@@ -7,7 +7,7 @@ import java.util.List;
  * @author Jahn-Willy & 
  * @version 09.04.2018 (dd.mm.yyyy)
  */
-public class Books
+public class Books extends Publications
 {
     private String title;       //Title as String
     private String author;      //Author as String
@@ -26,8 +26,8 @@ public class Books
      */
     public Books(String title)
     {
-        this.title = title;
-        //super(title);
+        //this.title = title;
+        super(title);
         this.author = "N/A";
         this.publisher = "N/P";
         this.genre = "N/G";

@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Book that is not in a series.
@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class Single_Book extends Books
 {
+    private HashMap<String, String> SingleMap;
     private boolean isInSeries;
     private int edition;
     
@@ -25,6 +26,7 @@ public class Single_Book extends Books
         super.setAuthor(author);
         isInSeries = false;
         edition = 1;
+        SingleMap = new HashMap<>();
     }
     
     // protected void someThing(List<Books> newBooks)
