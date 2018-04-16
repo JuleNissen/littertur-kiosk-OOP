@@ -9,16 +9,18 @@ import java.util.List;
  */
 public class Books
 {
-    private String title;   //Title as String
-    private String author;  //Author as String
-    private String publisher; //Publisher as String
+    private String title;       //Title as String
+    private String author;      //Author as String
+    private String publisher;   //Publisher as String
+    private String genre;       //Genre as String
     private boolean released;   //Released as boolean
     private boolean isInSeries; //isInSeries as boolean
 
     /**
      * Constructor for objects of class Books
      * Title handled by super-class.
-     * Sets author to String "N/A".
+     * Sets author to String "N/A". (No Author)
+     * genre String N/G. (No Genre)
      * released if set to 'true' by default.
      * isInSeries is set to 'false' by default.
      */
@@ -28,6 +30,7 @@ public class Books
         //super(title);
         this.author = "N/A";
         this.publisher = "N/P";
+        this.genre = "N/G";
         released = true;
     }
 
