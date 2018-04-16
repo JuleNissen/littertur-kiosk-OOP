@@ -26,7 +26,6 @@ public class Books extends Publications
      */
     public Books(String title)
     {
-        //this.title = title;
         super(title);
         this.author = "N/A";
         this.publisher = "N/P";

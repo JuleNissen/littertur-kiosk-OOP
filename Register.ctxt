@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Register
-comment0.text=\r\n\ Models\ a\ digital\ register\ for\ various\ kinds\ of\ Publications\r\n\r\n\ @author\ Alejandro\ Gr\u00F8nhaug,\ Jahn-Willy\r\n\ @version\ 2018-02-09\r\n
+comment0.text=\r\n\ Models\ a\ digital\ register\ for\ various\ kinds\ of\ Publications\r\n\r\n\ @author\ Alejandro\ Gr\u00F8nhaug,\ Jahn-Willy\r\n\ @version\ 16.4.2018\ (dd.mm.yyyy)\r\n
 comment1.params=
 comment1.target=Register()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Register\r\n
@@ -39,6 +39,7 @@ comment5.target=void\ addSeriesBooks()
 comment5.text=\r\n\ Adds\ new\ series\ of\ books\r\n\ @param\ title\ for\ book\r\n
 comment6.params=
 comment6.target=void\ listAllStandAloneBooks()
+comment6.text=\r\n\ Lists\ and\ prints\ all\ elements\ in\ StandAloneBook\ list\r\n
 comment7.params=title
 comment7.target=void\ addPublicationsTest2(java.lang.String)
 comment7.text=\r\n\ Test\ for\ adding\ publication\ using\ a\ user\ defined\ String\r\n

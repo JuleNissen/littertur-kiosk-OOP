@@ -6,7 +6,7 @@ import java.util.Iterator;
  * Models a digital register for various kinds of Publications
  *
  * @author Alejandro Grønhaug, Jahn-Willy
- * @version 2018-02-09
+ * @version 16.4.2018 (dd.mm.yyyy)
  */
 public class Register
 {
@@ -68,6 +68,9 @@ public class Register
         SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union"));
     }
     
+    /**
+     * Lists and prints all elements in StandAloneBook list
+     */
     public void listAllStandAloneBooks()
     {
         for(int index = 0; index < StandAloneBook.size(); index++)
