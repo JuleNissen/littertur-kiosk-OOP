@@ -25,6 +25,7 @@ public class Books
     public Books(String title)
     {
         this.title = title;
+        //super(title);
         this.author = "N/A";
         this.publisher = "N/P";
         released = true;
@@ -59,7 +60,7 @@ public class Books
      * Get title of publication
      * @return title of publication
      */
-    protected String getTitle()
+    public String getTitle()
     {
         return this.title;
     }

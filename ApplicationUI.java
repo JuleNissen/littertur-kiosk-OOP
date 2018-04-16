@@ -33,7 +33,10 @@ public class ApplicationUI
     private String[] publicationItems = 
     {
         "1. Add Standalone book",
-        "2. Add book series"
+        "2. Add book series",
+        "3. Add newspaper",
+        "4. Add Comics",
+        "5. Add magazine"
     };
 
     /**
@@ -73,11 +76,11 @@ public class ApplicationUI
                     break;
 
                     case 4:
-                    addNewProduct();
+                    this.addNewProduct();
                     break;
 
                     case 5:
-                    findPublicationUserDefined();
+                    this.findPublicationUserDefined();
                     break;
                     
                     case 6:
@@ -207,8 +210,19 @@ public class ApplicationUI
                    System.out.println("Book serie should have been filled now");
                    break;
                    
-                   
                    case 3:
+                   System.out.println("WIP");
+                   break;
+                   
+                   case 4:
+                   System.out.println("WIP");
+                   break;
+                   
+                   case 5:
+                   System.out.println("WIP");
+                   break;
+                   
+                   case 6:
                    System.out.println("\nDon't forget to check if your books have been added!\n");
                    quit = true;
                    break;
