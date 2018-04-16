@@ -23,10 +23,10 @@ public class Series_Book extends Books
         isInSeries = true;
     }
     
-    protected void someThing(List<Books> newBooks)
-    {
-        inSeries();
-    }
+    // protected void someThing(List<Books> newBooks)
+    // {
+        // inSeries();
+    // }
     
     /**
      * Returns boolean for book is in series or not.
@@ -35,6 +35,6 @@ public class Series_Book extends Books
      */
     public boolean inSeries()
     {
-        return super.posInSeries();
+        return isInSeries;
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
  * @author Jahn-Willy & 
  * @version 09.04.2018 (dd.mm.yyyy)
  */
-public abstract class Books extends Publications
+public class Books
 {
     private String title;   //Title as String
     private String author;  //Author as String
@@ -24,16 +24,16 @@ public abstract class Books extends Publications
      */
     public Books(String title)
     {
-        super(title);
+        this.title = title;
         this.author = "N/A";
         this.publisher = "N/P";
         released = true;
     }
 
-    /**
-     * Abstract method for single and series book.
-     */
-    protected abstract void someThing(List<Books> newBooks);
+    // /**
+     // * Abstract method for single and series book.
+     // */
+    // protected abstract void someThing(List<Books> newBooks);
     
     
     /**
@@ -46,28 +46,6 @@ public abstract class Books extends Publications
     }
     
     /**
-     * Set book in series
-     * Will return true
-     * @return true is book is in a series
-     */
-    protected boolean posInSeries()
-    {
-        isInSeries = true;
-        return isInSeries;
-    }
-    
-    /**
-     * Set book NOT in series
-     * Will return false
-     * @return false for book in series
-     */
-    protected boolean negInSeries()
-    {
-        isInSeries = false;
-        return isInSeries;
-    }
-    
-    /**
      * Returns boolean for book is in series or not.
      * Redefined version should return 'false'
      * @Return false if not in series.
@@ -75,6 +53,15 @@ public abstract class Books extends Publications
     public boolean inSeries(boolean isInSeries)
     {
         return this.isInSeries;
+    }
+    
+    /**
+     * Get title of publication
+     * @return title of publication
+     */
+    protected String getTitle()
+    {
+        return this.title;
     }
     
     /**
@@ -101,7 +88,6 @@ public abstract class Books extends Publications
      */
     protected void setBookPublisher(String publisher)
     {
-        this.publisher = publisher; //hvorfor er denne linjen nødvendig?
-        setPublisher(this.publisher);
+        this.publisher = publisher; 
     }
 }

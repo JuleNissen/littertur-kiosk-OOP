@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Write a description of class ReadingMaterials here.
  *
@@ -5,7 +7,7 @@
  * @version 2018-02-09
  */
 public class Publications
-{
+{   
     private String title; //Title of publication as String
     private String publisher;
     private int monthPublished;
@@ -86,6 +88,8 @@ public class Publications
     {
         this.publisher = publisher;
     }
+    
+
     
     /**
      *Prints details of Publication

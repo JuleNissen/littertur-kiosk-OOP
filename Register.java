@@ -9,6 +9,8 @@ import java.util.Iterator;
  */
 public class Register
 {
+    Collection collection = new Collection();
+    
     private ArrayList<Publications>  listOfPublications;
 
     /**
@@ -30,6 +32,27 @@ public class Register
         listOfPublications.add(new Publications ("Finn meg", "FN 2187", 2015, 12, 16));
     }
 
+    /**
+     * test adding books form UI though Register to Collection
+     */
+    public void addStandAloneBooks()
+    {
+        collection.addSingleBookPosiTest();
+    }
+    
+    public void listAllStandAloneBooks()
+    {
+        collection.listAllStandAlone();
+    }
+    
+    /**
+     * adding books form UI though Register to Collection
+     */
+    public void addSeriesBooks()
+    {
+        collection.addSeriesBookPosiTest();
+    }
+    
     /**
      * Test for adding publication using a user defined String
      */

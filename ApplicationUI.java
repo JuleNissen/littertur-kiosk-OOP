@@ -18,14 +18,23 @@ public class ApplicationUI
     // The menu tha will be displayed. Please edit/alter the menu
     // to fit your application (i.e. replace "prodct" with "litterature"
     // etc.
-    private String[] menuItems = {
+    private String[] menuItems = 
+    {
             "1. Fill publication list",
             "2. List all publications",
             "3. Find a publication named Finn meg and its author",
             "4. Add a publication",
-            "5. Search for own publication"
+            "5. Search for own publication",
+            "6. List all stand alone books",
+            "7. List all book series"
 
         };
+        
+    private String[] publicationItems = 
+    {
+        "1. Add Standalone book",
+        "2. Add book series"
+    };
 
     /**
      * Creates an instance of the ApplicationUI User interface. 
@@ -51,9 +60,9 @@ public class ApplicationUI
                 int menuSelection = this.showMenu();
                 switch (menuSelection) 
                 {
-                     case 1:
-                     this.fillPublicationList();
-                     break;
+                    case 1:
+                    this.fillPublicationList();
+                    break;
 
                     case 2:
                     this.listAllPublications();
@@ -72,7 +81,15 @@ public class ApplicationUI
                     break;
                     
                     case 6:
-                    System.out.println("\nThank you for using Media stand v0.1. Bye!\n");
+                    listAllStandAloneBooks();
+                    break;
+                    
+                    case 7:
+                    listBookSeries();
+                    break;
+                    
+                    case 8:
+                    System.out.println("\nThank you for using Media stand v0.3. Bye!\n");
                     quit = true;
                     break;
                     
@@ -109,7 +126,7 @@ public class ApplicationUI
      */
     private int showMenu() throws InputMismatchException 
     {
-        System.out.println("\n**** Register v0.1 ****\n");
+        System.out.println("\n**** Register v0.3 ****\n");
         // Display the menu
         for ( String menuItem : menuItems )
         {
@@ -149,24 +166,89 @@ public class ApplicationUI
         register.listAllPublications();
     }
 
+    private void listAllStandAloneBooks()
+    {
+        register.listAllStandAloneBooks();
+    }
+    
+    private void listBookSeries()
+    {
+        register.listAllStandAloneBooks();
+    }
+    
     /**
-     * Add a new product/literature to the register.
-     * In this method you have to add code to ask the
-     * user for the necessary information you need to 
-     * create an instance of the product, which you
-     * then send as a parameter to the addNewspaper()-
-     * method of the register.
-     * Remember to also handle invalid input from the
-     * user!!
+     * Made new menu to show user when *he wants to add more publications themselves
+     * We do like menus don't we! revert by commenting menu and uncomment
+     * single line comments under start.
      */
     private void addNewProduct()
     {   //Should user have this function?
         System.out.println("addNewProduct() was called");
-        System.out.println("Please enter String title");
+        System.out.println("Will you be adding a book or a periodical?");
+        // Scanner reader = new Scanner(System.in);
+        // String title = Input.next();
+        // register.addPublicationsTest2(title);
+        boolean quit = false;
+        
+        while (!quit)
+        {
+            try
+            {
+               int PublicationMenu = this.showMenu1();
+                switch (PublicationMenu) 
+               {
+                   case 1:
+                   register.addStandAloneBooks();
+                   System.out.println("StandAlone Book list should have been filled now");
+                   break;
+                   
+                   case 2:
+                   register.addSeriesBooks();
+                   System.out.println("Book serie should have been filled now");
+                   break;
+                   
+                   
+                   case 3:
+                   System.out.println("\nDon't forget to check if your books have been added!\n");
+                   quit = true;
+                   break;
+                   
+                   default:
+                   System.out.println("If you ever see this message, you must be doing something wrong!");
+                   break;
+               }
+            }
+            catch (InputMismatchException ime) 
+            {
+                System.out.println("\nERROR: Please provide a number between 1 and " + this.menuItems.length + "..\n");
+            }
+        }
+        
+    }
+    
+    /**
+     * Menu for user to add books
+     */
+    private int showMenu1() throws InputMismatchException 
+    {
+        System.out.println("\n**** Book-Adder v0.01 ****\n");
+        // Display the menu
+        for ( String publicationItems : publicationItems )
+        {
+            System.out.println(publicationItems);
+        }
+        int publicationItemsNumber = publicationItems.length + 1;
+        // Add the "Exit"-choice to the menu
+        System.out.println(publicationItemsNumber + ". Back\n");
+        System.out.println("Please choose menu item (1-" + publicationItemsNumber + "): ");
+        // Read input from user
         Scanner reader = new Scanner(System.in);
-        String title = Input.next();
-        register.addPublicationsTest2(title);
-
+        int PublicationMenu = reader.nextInt();
+        if ((PublicationMenu < 1) || (PublicationMenu > publicationItemsNumber)) 
+        {
+            throw new InputMismatchException();
+        }
+        return PublicationMenu;
     }
 
     /**

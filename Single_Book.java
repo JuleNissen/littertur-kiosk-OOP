@@ -27,11 +27,11 @@ public class Single_Book extends Books
         edition = 1;
     }
     
-    protected void someThing(List<Books> newBooks)
-    {
-        inSeries();
-        getEdition();
-    }
+    // protected void someThing(List<Books> newBooks)
+    // {
+        // inSeries();
+        // getEdition();
+    // }
     
     /**
      * Returns boolean for book is in series or not.
@@ -40,7 +40,7 @@ public class Single_Book extends Books
      */
     public boolean inSeries()
     {
-        return super.negInSeries();
+        return isInSeries;
     }
     
     /**
