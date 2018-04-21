@@ -19,7 +19,7 @@ public class ApplicationUI
     // to fit your application (i.e. replace "prodct" with "litterature"
     // etc.
     private String[] menuItems = 
-    {
+        {
             "1. Fill publication list",
             "2. List all publications",
             "3. Find a publication named Finn meg and its author",
@@ -29,15 +29,15 @@ public class ApplicationUI
             "7. List all book series"
 
         };
-        
+
     private String[] publicationItems = 
-    {
-        "1. Add Standalone book",
-        "2. Add book series",
-        "3. Add newspaper",
-        "4. Add Comics",
-        "5. Add magazine"
-    };
+        {
+            "1. Add Standalone book",
+            "2. Add book series",
+            "3. Add newspaper",
+            "4. Add Comics",
+            "5. Add magazine"
+        };
 
     /**
      * Creates an instance of the ApplicationUI User interface. 
@@ -76,26 +76,26 @@ public class ApplicationUI
                     break;
 
                     case 4:
-                    this.addNewProduct();
+                    this.addNewProduct(); // Følg denne for å se endringene mine!
                     break;
 
                     case 5:
                     this.findPublicationUserDefined();
                     break;
-                    
+
                     case 6:
-                    listAllStandAloneBooks();
-                    break;
-                    
+                    listAllStandAloneBooks(); //Oppgaven ønsker at man skal kunne liste opp de ulike 
+                    break;                      // utgivningene. skal vi gjøre det på denne måten?
+
                     case 7:
                     listBookSeries();
                     break;
-                    
+
                     case 8:
                     System.out.println("\nThank you for using Media stand v0.3. Bye!\n");
                     quit = true;
                     break;
-                    
+
                     default:
                     System.out.println("If you ever see this message, you must be doing something wrong!");
                     break;
@@ -109,7 +109,7 @@ public class ApplicationUI
 
     }
 
-     /**
+    /**
      * Positive test for adding a publication to the list
      */
     public void fillPublicationList()
@@ -117,7 +117,7 @@ public class ApplicationUI
         register.addPublicationsPosiTest();
         System.out.println("Publication list should have been filled now");
     }
-    
+
     /**
      * Displays the menu to the user, and waits for the users input. The user is
      * expected to input an integer between 1 and the max number of menu items. 
@@ -153,12 +153,12 @@ public class ApplicationUI
     // ------ All these methods are made privat, since they are only used by the menu ---
 
     // /**
-     // * Initializes the application.
-     // * Typically you would create the LiteratureRegistrer-instance here
-     // */
+    // * Initializes the application.
+    // * Typically you would create the LiteratureRegistrer-instance here
+    // */
     // private void init()
     // {
-        // System.out.println("init() was called");
+    // System.out.println("init() was called");
     // }
 
     /**
@@ -173,73 +173,73 @@ public class ApplicationUI
     {
         register.listAllStandAloneBooks();
     }
-    
+
     private void listBookSeries()
     {
-        register.listAllStandAloneBooks();
+        register.listAllSeriesBooks();
     }
-    
+
     /**
      * Made new menu to show user when *he wants to add more publications themselves
      * We do like menus don't we! revert by commenting menu and uncomment
      * single line comments under start.
      */
     private void addNewProduct()
-    {   //Should user have this function?
+    {
         System.out.println("addNewProduct() was called");
         System.out.println("Will you be adding a book or a periodical?");
         // Scanner reader = new Scanner(System.in);
         // String title = Input.next();
         // register.addPublicationsTest2(title);
         boolean quit = false;
-        
+
         while (!quit)
         {
             try
             {
-               int PublicationMenu = this.showMenu1();
+                int PublicationMenu = this.showMenu1();
                 switch (PublicationMenu) 
-               {
-                   case 1:
-                   register.addStandAloneBooks();
-                   System.out.println("StandAlone Book list should have been filled now");
-                   break;
-                   
-                   case 2:
-                   register.addSeriesBooks();
-                   System.out.println("Book serie should have been filled now");
-                   break;
-                   
-                   case 3:
-                   System.out.println("WIP");
-                   break;
-                   
-                   case 4:
-                   System.out.println("WIP");
-                   break;
-                   
-                   case 5:
-                   System.out.println("WIP");
-                   break;
-                   
-                   case 6:
-                   System.out.println("\nDon't forget to check if your books have been added!\n");
-                   quit = true;
-                   break;
-                   
-                   default:
-                   System.out.println("If you ever see this message, you must be doing something wrong!");
-                   break;
-               }
+                {
+                    case 1:
+                    register.addStandAloneBooks();
+                    System.out.println("StandAlone Book list should have been filled now");
+                    break;
+
+                    case 2:
+                    register.addSeriesBooks();
+                    System.out.println("Book serie should have been filled now");
+                    break;
+
+                    case 3:
+                    System.out.println("WIP");
+                    break;
+
+                    case 4:
+                    System.out.println("WIP");
+                    break;
+
+                    case 5:
+                    System.out.println("WIP");
+                    break;
+
+                    case 6:
+                    System.out.println("\nDon't forget to check if your books have been added!\n");
+                    quit = true;
+                    break;
+
+                    default:
+                    System.out.println("If you ever see this message, you must be doing something wrong!");
+                    break;
+                }
             }
             catch (InputMismatchException ime) 
             {
                 System.out.println("\nERROR: Please provide a number between 1 and " + this.menuItems.length + "..\n");
             }
         }
-        
+
     }
-    
+
     /**
      * Menu for user to add books
      */
@@ -288,8 +288,7 @@ public class ApplicationUI
     {
         register.findAllPublicationFinnMeg();
     }
-    
-    
+
     /**
      * Search and print publication given by user.
      * If method does not find publication with same name will print
@@ -300,7 +299,7 @@ public class ApplicationUI
         System.out.println("Please enter title to search for");
         Scanner reader = new Scanner(System.in);
         String title = Input.next();
-        
+
         register.printAllPublicationsWithTitle(title);
     }
 }

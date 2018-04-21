@@ -12,7 +12,7 @@ public class Register
 {
     private ArrayList<Single_Book> StandAloneBook;
     private ArrayList<Series_Book> SeriesBooks;
-    
+
     private ArrayList<Publications>  listOfPublications;
 
     /**
@@ -24,19 +24,7 @@ public class Register
         this.StandAloneBook = new ArrayList<Single_Book>();
         this.SeriesBooks = new ArrayList<Series_Book>();
     }
-    
-    /**
-     * Add Single_Book list to Publication list.
-     */
-    public void singelToPublication(int i, List<Single_Book> singleMap)
-    {
-        for(int index = 0; index < singleMap.size(); index++)
-        {
-            System.out.print(singleMap.get(index) + ": ");
-        }
-        System.out.println(i);
-    }
-    
+
     /**
      * Positive test for adding a publication to the list
      */
@@ -47,17 +35,32 @@ public class Register
         listOfPublications.add(new Publications ("Selskap", "Solomon Grundy", 2015, 05, 10));
         listOfPublications.add(new Publications ("Finn meg", "FN 2187", 2015, 12, 16));
     }
-    
+
     /**
-     * Adds new standalone book
+     * Adds new standalone books
      * @param title for book
      */
     public void addStandAloneBooks()
     {
         StandAloneBook.add(new Single_Book("StandAlone BookTitle", "StandAlone BookPublisher"));
         StandAloneBook.add(new Single_Book("Single title", "single publisher"));
+        addBookListToPublications();
     }
-    
+
+    /**
+     * Add stand alone book list to publicationList
+     */
+    //Vet du hvordan vi kan ta inn hvilken som helst 
+    // liste her for å så legge dem inn i publicationsList??
+    //Det vil hjelpe på med generalisering tenker jeg.
+    public void addBookListToPublications()
+    {
+        for (int i = 0; i < StandAloneBook.size(); i++)
+        {
+            listOfPublications.add(StandAloneBook.get(i));
+        }
+    }
+
     /**
      * Adds new series of books
      * @param title for book
@@ -66,20 +69,59 @@ public class Register
     {
         SeriesBooks.add(new Series_Book("Series title", "Series Publisher"));
         SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union"));
+        addBookListToPublications2();
     }
-    
+
+    /**
+     * Add book series list to publications list
+     * Really a dublicate of addBookListToPublications()
+     */
+    public void addBookListToPublications2()
+    {
+        for (int i = 0; i < SeriesBooks.size(); i++)
+        {
+            listOfPublications.add(SeriesBooks.get(i));
+        }
+    }
+
     /**
      * Lists and prints all elements in StandAloneBook list
      */
     public void listAllStandAloneBooks()
     {
-        for(int index = 0; index < StandAloneBook.size(); index++)
+        if(isEmpty())
         {
-            Publications rm = StandAloneBook.get(index);
-            System.out.println(rm.summaryAsString());
+            System.out.println("Sorry, there are no stand-alone books available");
+        }
+        else
+        {
+            for(int index = 0; index < StandAloneBook.size(); index++)
+            {
+                Publications rm = StandAloneBook.get(index);
+                System.out.println(rm.summaryAsString());
+            }
         }
     }
-    
+
+    /**
+     * Lists and prints all elements in SeriesBooks list 
+     */
+    public void listAllSeriesBooks()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Sorry, there are no book series available");
+        }
+        else
+        {
+            for (int i = 0; i < SeriesBooks.size(); i++)
+            {
+                Publications rm = SeriesBooks.get(i);
+                System.out.println(rm.summaryAsString());
+            }
+        }
+    }
+
     /**
      * Test for adding publication using a user defined String
      */
@@ -95,7 +137,7 @@ public class Register
     int monthPublished,int dayPublished)
     {
         listOfPublications.add(new Publications (title,author,yearPublished,
-        monthPublished, dayPublished));
+                monthPublished, dayPublished));
     }
 
     /**
@@ -119,6 +161,7 @@ public class Register
 
     /**
      * Search for publications by title using Iterator
+     * String stops if space is found... needs fix.
      * @param title, the tile of publication you wish to search for
      * @return publication(s) found with matching title 
      */
@@ -147,7 +190,6 @@ public class Register
         return this.listOfPublications.iterator();
     }
 
-        
     /**
      * Prints all publication found with same title.
      * Prints title and publisher.
@@ -155,7 +197,7 @@ public class Register
     public void printAllPublicationsWithTitle(String title)
     {
         Iterator<Publications> foundPublicationIt = 
-        findAllPublicationsByTitle(title);
+            findAllPublicationsByTitle(title);
         //Print all found persons
         if (foundPublicationIt.hasNext())
         {
@@ -172,10 +214,10 @@ public class Register
         else
         {
             System.out.println("Could not find any publications named'" 
-            + title + "' in publication list");
+                + title + "' in publication list");
         }
     }
-    
+
     /**
      * Prints all publication found with same title. "Finn meg"
      * Prints title and publisher.
