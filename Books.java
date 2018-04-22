@@ -24,11 +24,9 @@ public class Books extends Publications
      * released if set to 'true' by default.
      * isInSeries is set to 'false' by default.
      */
-    public Books(String title)
+    public Books(String publisher, String title, String author, int edition)
     {
-        super(title);
-        this.author = "N/A";
-        this.publisher = "N/P";
+        super(publisher, title, author, edition);
         this.genre = "N/G";
         released = true;
     }
@@ -66,16 +64,7 @@ public class Books extends Publications
     {
         return this.title;
     }
-    
-    /**
-     * Get author of publication
-     * @return author of publication
-     */
-    protected String getAuthor()
-    {
-        return this.author;
-    }
-    
+        
     /**
      * Sets the name of the author
      * @param author of the publication

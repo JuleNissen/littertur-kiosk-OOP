@@ -10,6 +10,8 @@ public class Publications
 {   
     private String title; //Title of publication as String
     private String publisher;
+    private String author;
+    private int edition; 
     private int monthPublished;
     private int dayPublished;
     private int yearPublished;
@@ -17,15 +19,40 @@ public class Publications
     
     /**
      * Constructor for objects of class Publications.
+     * This constructor is used by Books
+     * @param publisher of the publication
      * @param title of the publication
+     * @param author of the publication
+     * @param edition
      */
-    public Publications(String title)
-    {
+    public Publications(String publisher, String title, String author, int edition)
+    {   
+        this.publisher = publisher;
         this.title = title;
-        this.publisher = "N/P";
-        this.subscribed = false;
+        this.author = author;
+        this.edition = 1;
+        this.yearPublished = 0000;
+        this.monthPublished = 00;
+        this.dayPublished = 00;
     }
 
+    /**
+     * Constructor for objects of class Publications.
+     * This contructor is used by Periodicals (compiler reasons)
+     * 
+     * @param publisher of the publication
+     * @param title of the publication
+     * @param author of the publication
+     */
+    public Publications(String title)
+    {   
+        this.title = title;
+        this.publisher = "N/P";
+        this.author = "N/A";
+        
+        //this.subscribed = false;
+    }
+    
     /**
      * Constructor for objects of class Publications.
      * @param title of the publication
@@ -34,11 +61,11 @@ public class Publications
      * @param monthPublished
      * @param dayPublished
      */
-    public Publications(String title, String publisher, int yearPublished, 
+    public Publications(String title, String author, int yearPublished, 
     int monthPublished,int dayPublished)
     {
         this.title = title;
-        this.publisher = publisher;
+        this.author = author;
         this.yearPublished = yearPublished;
         this.monthPublished = monthPublished;
         this.dayPublished = dayPublished;
@@ -83,6 +110,14 @@ public class Publications
     {
         return this.publisher;
     }
+    /**
+     * get author as string
+     * @return author as string
+     */
+    public String getAuthor()
+    {
+        return this.author;
+    }
     
     protected void setPublisher(String publisher)
     {
@@ -95,6 +130,18 @@ public class Publications
      */
     public String summaryAsString()
     {
-        return title+":"+publisher+" - "+yearPublished+"/"+monthPublished+"/"+dayPublished;
+        if(title == null)
+        {
+            title = "Missing title";
+        }
+        if(author == null)
+        {
+            author = "Missing author";
+        }
+        if(publisher == null)
+        {
+            publisher = "Missing publisher";
+        }
+        return title+": "+author+": "+publisher+ " - "+yearPublished+"/"+monthPublished+"/"+dayPublished;
     }
 }
