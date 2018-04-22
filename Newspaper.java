@@ -2,12 +2,11 @@
 /**
  * Models a newspaper publication.
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
 public class Newspaper extends Periodicals
 {
-    // instance variables - replace the example below with your own
-    //private int x;
+    private String type = "Newspaper";
 
     /**
      * Constructor for objects of class Newspaper
@@ -19,13 +18,12 @@ public class Newspaper extends Periodicals
 
 
     /**
-     * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
      */
-    public void sampleMethod()
+    public String sample2Method()
     {
+        String LongAssDescription = getTitle()+getPublisher()+getMonthPublished()+getDayPublished();
+        return LongAssDescription;
     }
 }
 

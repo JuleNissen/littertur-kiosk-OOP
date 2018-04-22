@@ -48,6 +48,17 @@ public class Register
     }
 
     /**
+     * Adds new series of books
+     * @param title for book
+     */
+    public void addSeriesBooks()
+    {
+        SeriesBooks.add(new Series_Book("Series title", "Series Publisher"));
+        SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union"));
+        addBookListToPublications2();
+    }
+
+    /**
      * Add stand alone book list to publicationList
      */
     //Vet du hvordan vi kan ta inn hvilken som helst 
@@ -60,18 +71,7 @@ public class Register
             listOfPublications.add(StandAloneBook.get(i));
         }
     }
-
-    /**
-     * Adds new series of books
-     * @param title for book
-     */
-    public void addSeriesBooks()
-    {
-        SeriesBooks.add(new Series_Book("Series title", "Series Publisher"));
-        SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union"));
-        addBookListToPublications2();
-    }
-
+    
     /**
      * Add book series list to publications list
      * Really a dublicate of addBookListToPublications()

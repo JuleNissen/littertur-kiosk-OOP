@@ -4,12 +4,12 @@
  * ie something that is published periodically and has an issue number.
  *
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
-public abstract class Periodicals extends Publications
+public class Periodicals extends Publications
 {
-    // instance variables - replace the example below with your own
-    private int issueNr;
+    protected String publisherSub;
+    protected int currentIssueNr; //Current number of publications in a year.
 
     /**
      * Constructor for objects of class Periodicals
@@ -17,8 +17,15 @@ public abstract class Periodicals extends Publications
     public Periodicals(String title)
     {
         super(title);
-        this.issueNr = issueNr;
-        //String perTitle = ;
+        this.currentIssueNr = currentIssueNr;
+        
+        // String publisher = getPublisher();
+        //int yearPublished = getYearPublished();
+        // int monthPublished = getMonthPublished();
+        // int dayPublished = getDayPublished();
+        
+        setPublisher(publisherSub);
+        //setDate();
     }
 
     /**

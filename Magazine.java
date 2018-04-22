@@ -2,12 +2,11 @@
 /**
  * Models a magazine publication.
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
 public class Magazine extends Periodicals
 {
-    // instance variables - replace the example below with your own
-    //private int x;
+    private String type = "Magazine";
 
     /**
      * Constructor for objects of class Magazine

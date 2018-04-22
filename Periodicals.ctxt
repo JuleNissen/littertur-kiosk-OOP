@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Periodicals
-comment0.text=\r\n\ Models\ a\ super\ class\ for\ periodical\ publications.\r\n\ ie\ something\ that\ is\ published\ periodically\ and\ has\ an\ issue\ number.\r\n\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 09.04.2018\ (dd.mm.yyyy)\r\n
+comment0.text=\r\n\ Models\ a\ super\ class\ for\ periodical\ publications.\r\n\ ie\ something\ that\ is\ published\ periodically\ and\ has\ an\ issue\ number.\r\n\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 22.04.2018\ (dd.mm.yyyy)\r\n
 comment1.params=title
 comment1.target=Periodicals(java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Periodicals\r\n
