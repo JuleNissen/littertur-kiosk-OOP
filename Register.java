@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-
 /**
  * Models a digital register for various kinds of Publications
  *
@@ -12,10 +11,10 @@ import java.util.Scanner;
  */
 public class Register
 {
-    private ArrayList<Single_Book> StandAloneBook;
-    private ArrayList<Series_Book> SeriesBooks;
+    // private ArrayList<Single_Book> StandAloneBook;
+    // private ArrayList<Series_Book> SeriesBooks;
     private ArrayList<Publications>  listOfPublications;
-    
+
     Scanner Input = new Scanner(System.in);
 
     /**
@@ -24,19 +23,8 @@ public class Register
     public Register()
     {
         this.listOfPublications = new ArrayList<Publications>();
-        this.StandAloneBook = new ArrayList<Single_Book>();
-        this.SeriesBooks = new ArrayList<Series_Book>();
-    }
-
-    /**
-     * Positive test for adding a publication to the list
-     */
-    public void addPublicationsPosiTest()
-    {
-        listOfPublications.add(new Publications ("Vitenskap", "Jens Jensen", 2017, 03, 10));
-        listOfPublications.add(new Publications ("Ikke-vitenskap", "Inga Flesk", 2013, 05, 04));
-        listOfPublications.add(new Publications ("Selskap", "Solomon Grundy", 2015, 05, 10));
-        listOfPublications.add(new Publications ("Finn meg", "FN 2187", 2015, 12, 16));
+        // this.StandAloneBook = new ArrayList<Single_Book>();
+        // this.SeriesBooks = new ArrayList<Series_Book>();
     }
 
     /**
@@ -45,12 +33,11 @@ public class Register
      */
     public void fillStandAloneBooks()
     {
-        StandAloneBook.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
-        StandAloneBook.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
-        addBookListToPublications();
+        listOfPublications.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
+        listOfPublications.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
+        // addBookListToPublications();
     }
-    
-    
+
     /**
      * Fills the list with dummy data
      */    
@@ -58,43 +45,47 @@ public class Register
     {
         listOfPublications.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
         listOfPublications.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
-        
+
         listOfPublications.add(new Series_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
         listOfPublications.add(new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 5, 1962, 3, 12));
-    
+
         listOfPublications.add(new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29));
-        
+
         listOfPublications.add(new Comics("Donald Duck", "Egmont", 12, "Comedy", 1998, 04, 24));    
-        
+
         listOfPublications.add(new Magazine("Ingeniøren", "NITO ", 01, "Vitenskap", 2012, 01, 04));
     }
 
+    public void addPublication(Publications publication)
+    {
+        listOfPublications.add(publication);
+    }
+    
     public void addStandAloneBook(String Publisher, String title, String author, int edition, int yearPublished,int monthPublished,int dayPublished)
     {
-        StandAloneBook.add(new Single_Book(title, Publisher, author, edition, yearPublished, monthPublished, dayPublished));
+        listOfPublications.add(new Single_Book(title, Publisher, author, edition, yearPublished, monthPublished, dayPublished));
     }
-    
+
     public void addSeriesBook(String title, String publisher, String author, int edition, int yearPublished, int monthPublished, int dayPublished)
     {
-    listOfPublications.add(new Series_Book(title, publisher, author, edition, yearPublished, monthPublished, dayPublished));
+        listOfPublications.add(new Series_Book(title, publisher, author, edition, yearPublished, monthPublished, dayPublished));
     }
-    
+
     public void addNewspaper(String title, String publisher, int issueNr, int yearPublished,int monthPublished,int dayPublished)
     {
-    listOfPublications.add(new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished));
+        listOfPublications.add(new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished));
     }
-    
+
     public void addComics(String title, String publisher, int issueNr, String genre,int yearPublished,int monthPublished,int dayPublished)
     {
         listOfPublications.add(new Comics( title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished));
     }
-    
+
     public void addMagazine(String title, String publisher, int issueNr, String genre,int yearPublished,int monthPublished,int dayPublished)
     {
         listOfPublications.add(new Magazine( title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished));
     } 
-    
-    
+
     /**
      * Adds new series of books
      * @param title for book
@@ -153,13 +144,13 @@ public class Register
 
     // public void printDetails()
     // {
-        // if (type().equals("Newspaper"))
-        // {
-            // Newspaper.newspaperDetails();
-        // }
-        
+    // if (type().equals("Newspaper"))
+    // {
+    // Newspaper.newspaperDetails();
     // }
-    
+
+    // }
+
     /**
      * Lists and prints all elements in SeriesBooks list 
      */
@@ -262,12 +253,12 @@ public class Register
             {
                 Publications p = foundPublicationIt.next();
                 System.out.println("Found:\n" + p.summaryAsString());
-                    // + "Title: "
-                    // + p.getTitle() 
-                    // + ", Author: "
-                    // + p.getAuthor()
-                    // + ", Published by: "
-                    // + p.getPublisher());
+                // + "Title: "
+                // + p.getTitle() 
+                // + ", Author: "
+                // + p.getAuthor()
+                // + ", Published by: "
+                // + p.getPublisher());
             }
         }
         else
@@ -292,12 +283,12 @@ public class Register
             {
                 Publications p = foundPublicationIt.next();
                 System.out.println("Found:\n" + p.summaryAsString());
-                    // + "Title: "
-                    // + p.getTitle() 
-                    // + ", Author: "
-                    // + p.getAuthor()
-                    // + ", published by:"
-                    // + p.getPublisher());
+                // + "Title: "
+                // + p.getTitle() 
+                // + ", Author: "
+                // + p.getAuthor()
+                // + ", published by:"
+                // + p.getPublisher());
             }
         }
         else
@@ -360,8 +351,7 @@ public class Register
 
         printAllPublicationsWithTitle(title);
     }
-    
-    
+
     /**
      * Return 'true' if the publication list is rempty
      * @Return 'true' if the publication list is rempty

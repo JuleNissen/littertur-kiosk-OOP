@@ -308,6 +308,10 @@ public class ApplicationUI
         while(stage == 7)
         {
             System.out.println("Your newspaper is being added...");
+            Publications publication = new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
+            register.addPublication(publication);
+            
+            
             register.addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
             System.out.println("Newspaper added!");
             break;
