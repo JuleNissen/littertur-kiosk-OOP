@@ -151,14 +151,14 @@ public class Register
         }
     }
 
-    public void printDetails()
-    {
-        if (type().equals("Newspaper"))
-        {
-            Newspaper.newspaperDetails();
-        }
+    // public void printDetails()
+    // {
+        // if (type().equals("Newspaper"))
+        // {
+            // Newspaper.newspaperDetails();
+        // }
         
-    }
+    // }
     
     /**
      * Lists and prints all elements in SeriesBooks list 

@@ -114,7 +114,7 @@ public class ApplicationUI
      */
     public void fillPublicationList()
     {
-        register.addPublicationsPosiTest();
+        register.fillWithDummyData();
         System.out.println("Publication list should have been filled now");
     }
 
@@ -193,8 +193,7 @@ public class ApplicationUI
                     break;
 
                     case 3:
-                    addNewsPaper();
-                    System.out.println("News papers should have been added."); //newspaper, FERDIG!
+                    addNewsPaper(); //newspaper, FERDIG!
                     break;
 
                     case 4:
@@ -310,6 +309,7 @@ public class ApplicationUI
         {
             System.out.println("Your newspaper is being added...");
             register.addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
+            System.out.println("Newspaper added!");
             break;
         }
         showMenu();
