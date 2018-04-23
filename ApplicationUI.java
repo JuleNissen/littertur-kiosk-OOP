@@ -183,12 +183,12 @@ public class ApplicationUI
                 switch (PublicationMenu) 
                 {
                     case 1:
-                    register.addStandAloneBooks(); //Books er med fillers, Book er egen bok
+                    register.fillStandAloneBooks(); //Books er med fillers, Book er egen bok
                     System.out.println("StandAlone Book list should have been filled now");
                     break;
 
                     case 2:
-                    register.addSeriesBooks();
+                    register.fillSeriesBooks();
                     System.out.println("Book serie should have been filled now");
                     break;
 
@@ -335,7 +335,7 @@ public class ApplicationUI
     {
         System.out.println("Please enter title to search for");
         Scanner reader = new Scanner(System.in);
-        String title = Input.next();
+        String title = Input.nextLine();
 
         register.printAllPublicationsWithTitle(title);
     }

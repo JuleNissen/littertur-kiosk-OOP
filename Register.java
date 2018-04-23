@@ -41,26 +41,27 @@ public class Register
      * Adds new standalone books
      * @param title for book
      */
-    public void addStandAloneBooks()
+    public void fillStandAloneBooks()
     {
-        StandAloneBook.add(new Single_Book("Publisher", "Title", "Author", 00));
-        StandAloneBook.add(new Single_Book("Gyldendal", "Berit på jentetur", "Bob-Kåre", 2));
+        StandAloneBook.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
+        StandAloneBook.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
         addBookListToPublications();
     }
 
-    public void addStandAloneBook(String Publisher, String title, String author, int edition)
+    public void addStandAloneBook(String Publisher, String title, String author, 
+        int edition, int yearPublished,int monthPublished,int dayPublished)
     {
-        StandAloneBook.add(new Single_Book(Publisher, title, author, edition));
+        StandAloneBook.add(new Single_Book(title, Publisher, author, edition, yearPublished, monthPublished, dayPublished));
     }
 
     /**
      * Adds new series of books
      * @param title for book
      */
-    public void addSeriesBooks()
+    public void fillSeriesBooks()
     {
-        SeriesBooks.add(new Series_Book("Series title", "Series Publisher"));
-        SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union"));
+        SeriesBooks.add(new Series_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
+        SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 5, 1962, 3, 12));
         addBookListToPublications2();
     }
 
@@ -76,18 +77,6 @@ public class Register
         {
             listOfPublications.add(StandAloneBook.get(i));
         }
-    }
-    
-
-    /**
-     * Adds new series of books
-     * @param title for book
-     */
-    public void addSeriesBooks()
-    {
-        SeriesBooks.add(new Series_Book("Publisher", "Title", "Author", 1));
-        SeriesBooks.add(new Series_Book("Sovjet Print", "Harry Potter", "Joseph Stalin", 1));
-        addBookListToPublications2();
     }
 
     /**

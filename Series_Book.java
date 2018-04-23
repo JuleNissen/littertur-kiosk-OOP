@@ -8,8 +8,8 @@ import java.util.HashMap;
  */
 public class Series_Book extends Books
 {
-    private HashMap<String, String> seriesMap;
-    private boolean isInSeries;
+    private static final String type = "SeriesBook";
+    private boolean isInSeries = true;
     
     /**
      * Constructor for objects of class Series_Book
@@ -17,10 +17,22 @@ public class Series_Book extends Books
      * Call inSeries in super-class to make it true.
      * Calls setAuthor in super-class to add author.
      */
-    public Series_Book(String publisher, String title, String author, int edition)
+    public Series_Book(String title, String publisher, String author, int edition, 
+    int yearPublished, int monthPublished, int dayPublished)
     {
-        super(publisher, title, author, edition);
-        isInSeries = true;
+        super(title, author, publisher);
+        setDate(yearPublished, monthPublished, dayPublished);
+        
+    }
+    
+    public void SeriesBookDetails()
+    {
+        System.out.println("Book: "+type);
+        System.out.println("Title: "+getTitle());
+        System.out.println("Author: "+getAuthor());
+        System.out.println("Edition#: "+getEditionNr());
+        System.out.println("Date: "+getDate());
+        System.out.println(getPublisher());
     }
     
     /**

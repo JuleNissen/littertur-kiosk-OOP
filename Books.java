@@ -9,12 +9,9 @@ import java.util.List;
  */
 public class Books extends Publications
 {
-    private String title;       //Title as String
-    private String author;      //Author as String
-    private String publisher;   //Publisher as String
     private String genre;       //Genre as String
-    private boolean released;   //Released as boolean
-    private boolean isInSeries; //isInSeries as boolean
+    private int editionNr;      //Edition as int
+    private String author;
 
     /**
      * Constructor for objects of class Books
@@ -24,62 +21,53 @@ public class Books extends Publications
      * released if set to 'true' by default.
      * isInSeries is set to 'false' by default.
      */
-    public Books(String publisher, String title, String author, int edition)
+    public Books(String title, String author, String publisher)
     {
-        super(publisher, title, author, edition);
-        this.genre = "N/G";
-        released = true;
-    }
+        super(title, author, publisher);
 
-    // /**
-     // * Abstract method for single and series book.
-     // */
-    // protected abstract void someThing(List<Books> newBooks);
-    
-    
-    /**
-     * Is the book released?
-     * @return true if book is released
-     */
-    protected boolean isReleased()
-    {
-        return released;
+        this.genre = genre;
+        this.editionNr = editionNr;
     }
     
     /**
-     * Returns boolean for book is in series or not.
-     * Redefined version should return 'false'
-     * @Return false if not in series.
+     * get the genre for book
+     * @param genre as string
+     * @return genre as string
      */
-    public boolean inSeries(boolean isInSeries)
+    public String getGenre(String genre)
     {
-        return this.isInSeries;
+        return genre;
     }
     
     /**
-     * Get title of publication
-     * @return title of publication
+     * set the genre for book
+     * @param genre as string
      */
-    public String getTitle()
+    public void setGenre(String genre)
     {
-        return this.title;
+        this.genre = genre;
     }
-        
+    
     /**
-     * Sets the name of the author
-     * @param author of the publication
-     */ 
-    protected void setAuthor(String author)
+     * get edition number for book
+     * @return edition number as int
+     */
+    public int getEditionNr()
+    {
+        return editionNr;
+    }
+    
+    public void setAuthor(String author)
     {
         this.author = author;
     }
     
     /**
-     * Set the name of publisher
-     * @param publisher of book
+     * get author as string
+     * @return author as string
      */
-    protected void setBookPublisher(String publisher)
+    public String getAuthor()
     {
-        this.publisher = publisher; 
+        return this.author;
     }
 }

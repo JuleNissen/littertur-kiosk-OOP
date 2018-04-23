@@ -10,9 +10,9 @@ import java.util.HashMap;
  */
 public class Single_Book extends Books
 {
-    private HashMap<String, String> SingleMap;
-    private boolean isInSeries;
+    private static final String type = "StandAloneBook";
     private int edition;
+    private boolean isInSeries = false;
     
     /**
      * Constructor for objects of class Single_Book
@@ -20,19 +20,24 @@ public class Single_Book extends Books
      * Calls setAuthor in super-class to add author.
      * Set isInSeries to 'false', this is a singel book.
      */
-    public Single_Book(String publisher, String title, String author, int edition)
+    public Single_Book(String title, String publisher, String author, int edition, 
+    int yearPublished, int monthPublished, int dayPublished)
     {
-        super(publisher, title, author, edition);
-        isInSeries = false;
+        super(title, author, publisher);
+        setDate(yearPublished, monthPublished, dayPublished);
+        
     }
     
-    // protected void someThing(List<Books> newBooks)
-    // {
-        // inSeries();
-        // getEdition();
-    // }
+    public void SingleBookDetails()
+    {
+        System.out.println("Book: "+type);
+        System.out.println("Title: "+getTitle());
+        System.out.println("Edition#: "+getEditionNr());
+        System.out.println("Date: "+getDate());
+        System.out.println(getPublisher());
+    }
     
-    /**
+        /**
      * Returns boolean for book is in series or not.
      * Redefined version should return 'false'
      * @Return false if not in series.
@@ -40,23 +45,5 @@ public class Single_Book extends Books
     public boolean inSeries()
     {
         return isInSeries;
-    }
-    
-    /**
-     * Return the book edition.
-     * @Return the book edition.
-     */
-    private int getEdition()
-    {
-        return edition;
-    }
-    
-    /**
-     * Increment edition number.
-     */
-    private void IncrementEditionNr()
-    {
-        this.edition ++;
-        this.edition = edition;
     }
 }

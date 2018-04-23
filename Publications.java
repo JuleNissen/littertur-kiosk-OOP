@@ -17,24 +17,24 @@ public class Publications
     private int yearPublished;
     private boolean subscribed;
     
-    /**
-     * Constructor for objects of class Publications.
-     * This constructor is used by Books
-     * @param publisher of the publication
-     * @param title of the publication
-     * @param author of the publication
-     * @param edition
-     */
-    public Publications(String publisher, String title, String author, int edition)
-    {   
-        this.publisher = publisher;
-        this.title = title;
-        this.author = author;
-        this.edition = 1;
-        this.yearPublished = 0000;
-        this.monthPublished = 00;
-        this.dayPublished = 00;
-    }
+    // /**
+     // * Constructor for objects of class Publications.
+     // * This constructor is used by Books
+     // * @param publisher of the publication
+     // * @param title of the publication
+     // * @param author of the publication
+     // * @param edition
+     // */
+    // public Publications(String title, String publisher, String author, int edition)
+    // {   
+        // this.publisher = publisher;
+        // this.title = title;
+        // this.author = author;
+        // this.edition = 1;
+        // this.yearPublished = 0000;
+        // this.monthPublished = 00;
+        // this.dayPublished = 00;
+    // }
 
     /**
      * Constructor for objects of class Publications.
@@ -44,18 +44,20 @@ public class Publications
      * @param title of the publication
      * @param author of the publication
      */
-    public Publications(String title)
+    public Publications(String title, String author, String publisher)
     {   
         this.title = title;
-<<<<<<< HEAD
+        this.author = author;
+        this.publisher = publisher;
+    }
+    
+    public Publications(String title)
+    {
+        this.title = title;
         this.publisher  = "N/P";
         this.subscribed = false;
-=======
         this.publisher = "N/P";
         this.author = "N/A";
-        
-        //this.subscribed = false;
->>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
     }
     
     /**
@@ -147,14 +149,15 @@ public class Publications
     {
         return this.publisher;
     }
-    /**
-     * get author as string
-     * @return author as string
-     */
-    public String getAuthor()
-    {
-        return this.author;
-    }
+    
+    // /**
+     // * get author as string
+     // * @return author as string
+     // */
+    // public String getAuthor()
+    // {
+        // return this.author;
+    // }
     
     protected void setPublisher(String publisherSub)
     {
