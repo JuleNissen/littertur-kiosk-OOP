@@ -92,7 +92,7 @@ public class ApplicationUI
                     break;
 
                     case 8:
-                    System.out.println("\nThank you for using Media stand v0.3. Bye!\n");
+                    System.out.println("\nThank you for using Media stand v0.5. Bye!\n");
                     quit = true;
                     break;
 
@@ -129,7 +129,7 @@ public class ApplicationUI
      */
     private int showMenu() throws InputMismatchException 
     {
-        System.out.println("\n**** Register v0.3 ****\n");
+        System.out.println("\n**** Register v0.5 ****\n");
         // Display the menu
         for ( String menuItem : menuItems )
         {
@@ -193,7 +193,8 @@ public class ApplicationUI
                     break;
 
                     case 3:
-                    System.out.println("WIP"); //newspaper
+                    addNewsPaper();
+                    System.out.println("News papers should have been added."); //newspaper
                     break;
 
                     case 4:
@@ -227,7 +228,7 @@ public class ApplicationUI
      */
     private int showMenu1() throws InputMismatchException 
     {
-        System.out.println("\n**** Book-Adder v0.01 ****\n");
+        System.out.println("\n**** Book-Adder v0.03 ****\n");
         // Display the menu
         for ( String publicationItems : publicationItems )
         {
@@ -249,59 +250,68 @@ public class ApplicationUI
     /**
      * test for å la bruker legge til selv!
      */
-    public void addStandAloneBook()
+    public void addNewsPaper()
     {
         Scanner reader = new Scanner(System.in);
         int stage = 1;
 
-        String publisher = null;
         String title = null;
-        String author = null;
-        int edition = 0;
-        
-        int maxEdition = 10;
+        String publisher = null;
+        int issueNr = 0;
+        int yearPublished = 0;
+        int monthPublished = 0;
+        int dayPublished = 0;
         
         while (stage == 1)
         {
-            System.out.println("Enter the book publisher:");
-            publisher = reader.nextLine();
+            System.out.println("Enter the title:");
+            title = reader.nextLine();
             stage = 2;
         }
         
         while (stage == 2)
         {
-            System.out.println("Enter the book title");
-            title = reader.nextLine();
+            System.out.println("Enter the publisher");
+            publisher = reader.nextLine();
             stage = 3;
         }
         
         while (stage == 3)
         {
-            System.out.println("Please name the author of the book");
-            author = reader.nextLine();
+            System.out.println("Enter the issue number");
+            issueNr = reader.nextInt();
             stage = 4;
         }
         
         while (stage == 4)
         {
-            System.out.println("Enter the book edition (1 to 10)");
-            while ((maxEdition >=0) && (maxEdition <= 10))
-            {
-                if(reader.hasNextInt())
-                {
-                    maxEdition = reader.nextInt();
-                }
-            }
+            System.out.println("Enter the published year");
+            yearPublished = reader.nextInt();
             stage = 5;
         }
         
         while (stage == 5)
         {
-            System.out.println("The book is now being added...");
-            
-            System.out.println("The book has been added");
-            showMenu();
+            System.out.println("Enter the published month (1-12)");
+            monthPublished = reader.nextInt();
+            stage = 6;
         }
+        
+        while(stage == 6)
+        {
+            System.out.println("Enter the day published(1-31)");
+            dayPublished = reader.nextInt();
+            stage = 7;
+        }
+        
+        while(stage == 7)
+        {
+            System.out.println("Your newspaper is being added...");
+            register.addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
+            System.out.println("The Newspaper has been added");
+            break;
+        }
+        showMenu();
     }
     
     /**
