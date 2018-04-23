@@ -48,57 +48,9 @@ public class Register
         addBookListToPublications();
     }
 
-    public void addStandAloneBook()
+    public void addStandAloneBook(String Publisher, String title, String author, int edition)
     {
-        Scanner reader = new Scanner(System.in);
-        int stage = 1;
-
-        String publisher = null;
-        String title = null;
-        String author = null;
-        int edition = 0;
-        
-        int maxEdition = 10;
-        
-        while (stage == 1)
-        {
-            System.out.println("Enter the book publisher:");
-            publisher = reader.nextLine();
-            stage = 2;
-        }
-        
-        while (stage == 2)
-        {
-            System.out.println("Enter the book title");
-            title = reader.nextLine();
-            stage = 3;
-        }
-        
-        while (stage == 3)
-        {
-            System.out.println("Please name the author of the book");
-            author = reader.nextLine();
-            stage = 4;
-        }
-        
-        while (stage ==4)
-        {
-            System.out.println("Enter the published year (four digits)");
-            while ((maxEdition >=0) && (maxEdition <= 10))
-            {
-                if(reader.hasNextInt())
-                {
-                    maxEdition = reader.nextInt();
-                }
-            }
-        }
-        
-        while (stage == 4)
-        {
-            System.out.println("The book is now being added...");
-            StandAloneBook.add(new Single_Book(publisher, title, author, edition));
-            System.out.println("The book has been added");
-        }
+        StandAloneBook.add(new Single_Book(Publisher, title, author, edition));
     }
 
     /**
