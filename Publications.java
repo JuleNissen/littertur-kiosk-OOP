@@ -146,7 +146,7 @@ public class Publications
         // return this.author;
     // }
     
-    protected void setPublisher(String publisherSub)
+    protected void setPublisher(String publisher)
     {
         this.publisher = publisher;
     }
