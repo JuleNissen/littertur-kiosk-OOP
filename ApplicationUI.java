@@ -194,7 +194,7 @@ public class ApplicationUI
 
                     case 3:
                     addNewsPaper();
-                    System.out.println("News papers should have been added."); //newspaper
+                    System.out.println("News papers should have been added."); //newspaper, FERDIG!
                     break;
 
                     case 4:
@@ -248,14 +248,16 @@ public class ApplicationUI
         return PublicationMenu;
     }
     /**
-     * test for å la bruker legge til selv!
+     * Add your own newspaper
+     * You will be guided trough the process of adding your own newspaper.
      */
     public void addNewsPaper()
     {
-        Scanner reader = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' istedefor reader.
         int stage = 1;
-
+        //Felt som skal fylles ut. bedømm selv om alle skal fylles ut eller ikke. summaryAsString() i publications vil ordne resten om nødvendig.
         String title = null;
+        String author = null;
         String publisher = null;
         int issueNr = 0;
         int yearPublished = 0;
@@ -308,7 +310,6 @@ public class ApplicationUI
         {
             System.out.println("Your newspaper is being added...");
             register.addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
-            System.out.println("The Newspaper has been added");
             break;
         }
         showMenu();
