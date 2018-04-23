@@ -14,9 +14,9 @@ public class Newspaper extends Periodicals
     public Newspaper(String title, String publisher, int issueNr,
     int yearPublished,int monthPublished,int dayPublished)
     {
-        super(title);
+        super(title, publisher);
         setIssueNr(issueNr);
-        setPublisher(publisher);
+        // setPublisher(publisher);
         setDate(yearPublished, monthPublished, dayPublished);
     }
 

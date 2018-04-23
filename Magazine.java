@@ -18,13 +18,13 @@ public class Magazine extends Periodicals
      * @param monthPublished, The month when the magazine was first published
      * @param dayPublished The day of the month when the magazine was first published
      */
-    public Magazine(String title, String publisherSub, int issueNr,
+    public Magazine(String title, String publisher, int issueNr,
     String genre,int yearPublished,int monthPublished,int dayPublished)
     {
-        super(title);
+        super(title, publisher);
         setIssueNr(issueNr);
         setGenre(genre);
-        setPublisher(publisherSub);
+        // setPublisher(publisherSub);
         setDate(yearPublished, monthPublished, dayPublished);
     }
 

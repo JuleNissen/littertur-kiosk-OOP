@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Comics
 comment0.text=\r\n\ Models\ a\ comic\ publication.\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 22.04.2018\ (dd.mm.yyyy)\r\n
-comment1.params=title\ publisherSub\ issueNr\ genre\ yearPublished\ monthPublished\ dayPublished
+comment1.params=title\ publisher\ issueNr\ genre\ yearPublished\ monthPublished\ dayPublished
 comment1.target=Comics(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ int,\ int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Comics\r\n
 comment2.params=

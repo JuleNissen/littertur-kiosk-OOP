@@ -15,9 +15,9 @@ public abstract class Periodicals extends Publications
     /**
      * Constructor for objects of class Periodicals
      */
-    public Periodicals(String title)
+    public Periodicals(String title, String publisher)
     {
-        super(title);
+        super(title, publisher);
         this.issueNr = issueNr;
         
         // String publisher = getPublisher();
