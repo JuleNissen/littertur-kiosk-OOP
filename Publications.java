@@ -16,7 +16,6 @@ public class Publications
     private int dayPublished;
     private int yearPublished;
     private boolean subscribed;
-    private String genre;
     
     /**
      * Constructor for objects of class Publications.
@@ -178,10 +177,6 @@ public class Publications
         {
             publisher = "Missing publisher";
         }
-        if(genre == null)
-        {
-            genre = "Missing genre"; // " "+genre+
-        }
-        return title+": "+author+": "+publisher+" - "+yearPublished+"/"+monthPublished+"/"+dayPublished;
+        return title+": "+author+": "+publisher+ " - "+yearPublished+"/"+monthPublished+"/"+dayPublished;
     }
 }
