@@ -3,3 +3,4 @@ git config --global core.excludesfile ~/.gitignore_global *.ctxt *.class
 *.class
 *.ctxt
 *.bluej
+*.bluej

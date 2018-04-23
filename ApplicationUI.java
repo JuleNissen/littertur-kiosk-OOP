@@ -183,7 +183,7 @@ public class ApplicationUI
                 switch (PublicationMenu) 
                 {
                     case 1:
-                    register.addStandAloneBook();
+                    register.addStandAloneBooks(); //Books er med fillers, Book er egen bok
                     System.out.println("StandAlone Book list should have been filled now");
                     break;
 
