@@ -55,7 +55,28 @@ public class Register
     {
         StandAloneBook.add(new Single_Book(title, Publisher, author, edition, yearPublished, monthPublished, dayPublished));
     }
-
+    
+    public void addSeriesBook(String title, String publisher, String author, int edition, int yearPublished, int monthPublished, int dayPublished)
+    {
+    listOfPublications.add(new Series_Book(title, publisher, author, edition, yearPublished, monthPublished, dayPublished));
+    }
+    
+    public void addNewspaper(String title, String publisher, int issueNr, int yearPublished,int monthPublished,int dayPublished)
+    {
+    listOfPublications.add(new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished));
+    }
+    
+    public void addComics(String title, String publisher, int issueNr, String genre,int yearPublished,int monthPublished,int dayPublished)
+    {
+        listOfPublications.add(new Comics( title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished));
+    }
+    
+    public void addMagazine(String title, String publisher, int issueNr, String genre,int yearPublished,int monthPublished,int dayPublished)
+    {
+        listOfPublications.add(new Magazine( title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished));
+    } 
+    
+    
     /**
      * Adds new series of books
      * @param title for book
@@ -112,6 +133,11 @@ public class Register
         }
     }
 
+    public void printDetails()
+    {
+    
+    }
+    
     /**
      * Lists and prints all elements in SeriesBooks list 
      */
