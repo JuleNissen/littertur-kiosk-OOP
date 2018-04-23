@@ -6,7 +6,7 @@
  */
 public class Comics extends Periodicals
 {
-    private static final String type = "Comic";
+    public static final String type = "Comic";
     
     /**
      * Constructor for objects of class Comics
@@ -20,7 +20,16 @@ public class Comics extends Periodicals
         // setPublisher(publisherSub);
         setDate(yearPublished, monthPublished, dayPublished);
     }
+    
 
+    /**
+     * @return value of field type
+     */
+    public String getType()
+    {
+        return type;
+    }
+    
     /**
      * Displays details for article Comic
      */

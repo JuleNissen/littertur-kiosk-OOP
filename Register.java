@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+
 /**
  * Models a digital register for various kinds of Publications
  *
@@ -13,7 +14,6 @@ public class Register
 {
     private ArrayList<Single_Book> StandAloneBook;
     private ArrayList<Series_Book> SeriesBooks;
-
     private ArrayList<Publications>  listOfPublications;
     
     Scanner Input = new Scanner(System.in);
@@ -49,9 +49,27 @@ public class Register
         StandAloneBook.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
         addBookListToPublications();
     }
+    
+    
+    /**
+     * Fills the list with dummy data
+     */    
+    public void fillWithDummyData()
+    {
+        listOfPublications.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
+        listOfPublications.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
+        
+        listOfPublications.add(new Series_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
+        listOfPublications.add(new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 5, 1962, 3, 12));
+    
+        listOfPublications.add(new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29));
+        
+        listOfPublications.add(new Comics("Donald Duck", "Egmont", 12, "Comedy", 1998, 04, 24));    
+        
+        listOfPublications.add(new Magazine("Ingeniøren", "NITO ", 01, "Vitenskap", 2012, 01, 04));
+    }
 
-    public void addStandAloneBook(String Publisher, String title, String author, 
-        int edition, int yearPublished,int monthPublished,int dayPublished)
+    public void addStandAloneBook(String Publisher, String title, String author, int edition, int yearPublished,int monthPublished,int dayPublished)
     {
         StandAloneBook.add(new Single_Book(title, Publisher, author, edition, yearPublished, monthPublished, dayPublished));
     }
@@ -135,7 +153,11 @@ public class Register
 
     public void printDetails()
     {
-    
+        if (type().equals("Newspaper"))
+        {
+            Newspaper.newspaperDetails();
+        }
+        
     }
     
     /**

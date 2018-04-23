@@ -7,7 +7,7 @@
 public class Magazine extends Periodicals
 {
 
-    private final String type = "Magazine"; //Type of article
+    public final String type = "Magazine"; //Type of article
     private String genre; //Genre/demographic of this magazine
     /**
      * Constructor for objects of class Magazine
@@ -28,6 +28,14 @@ public class Magazine extends Periodicals
         setDate(yearPublished, monthPublished, dayPublished);
     }
 
+    /**
+     * @return value of field type
+     */
+    public String getType()
+    {
+        return type;
+    }    
+    
     /**
      * Displays details for article Magazine
      */

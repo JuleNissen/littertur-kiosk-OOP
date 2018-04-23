@@ -6,7 +6,7 @@
  */
 public class Newspaper extends Periodicals
 {
-    private static final String type = "Newspaper";
+    public static final String type = "Newspaper";
 
     /**
      * Constructor for objects of class Newspaper
@@ -19,8 +19,15 @@ public class Newspaper extends Periodicals
         // setPublisher(publisher);
         setDate(yearPublished, monthPublished, dayPublished);
     }
-
-
+    
+    /**
+     * @return value of field type
+     */
+    public String getType()
+    {
+        return type;
+    }
+    
     /**
      * Displays details for article Newspaper
      */
