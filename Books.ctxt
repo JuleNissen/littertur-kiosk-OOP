@@ -15,8 +15,15 @@ comment4.target=java.lang.String\ getTitle()
 comment4.text=\r\n\ Get\ title\ of\ publication\r\n\ @return\ title\ of\ publication\r\n
 comment5.params=author
 comment5.target=void\ setAuthor(java.lang.String)
+<<<<<<< HEAD
+comment5.text=\r\n\ \r\n
+comment6.params=
+comment6.target=java.lang.String\ getAuthor()
+comment6.text=\r\n\ get\ author\ as\ string\r\n\ @return\ author\ as\ string\r\n
+=======
 comment5.text=\r\n\ Sets\ the\ name\ of\ the\ author\r\n\ @param\ author\ of\ the\ publication\r\n
 comment6.params=publisher
 comment6.target=void\ setBookPublisher(java.lang.String)
 comment6.text=\r\n\ Set\ the\ name\ of\ publisher\r\n\ @param\ publisher\ of\ book\r\n
+>>>>>>> 86d78684ce79c5b2249f1da3c62c131833a87502
 numComments=7
