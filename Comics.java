@@ -11,13 +11,13 @@ public class Comics extends Periodicals
     /**
      * Constructor for objects of class Comics
      */
-    public Comics(String title, String publisherSub, int issueNr,
+    public Comics(String title, String publisher, int issueNr,
     String genre,int yearPublished,int monthPublished,int dayPublished)
     {
-        super(title);
+        super(title, publisher);
         setGenre(genre);
         setIssueNr(issueNr);
-        setPublisher(publisherSub);
+        // setPublisher(publisherSub);
         setDate(yearPublished, monthPublished, dayPublished);
     }
 

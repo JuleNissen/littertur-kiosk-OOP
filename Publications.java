@@ -41,6 +41,12 @@ public class Publications
         this.author = "N/A";
     }
     
+    public Publications(String title, String publisher)
+    {
+        this.title = title;
+        this.publisher  = publisher;
+    }
+    
     /**
      * Constructor for objects of class Publications.
      * @param title of the publication
