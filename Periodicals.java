@@ -6,10 +6,11 @@
  * @author Alejandro M T Grønhaug
  * @version 22.04.2018 (dd.mm.yyyy)
  */
-public class Periodicals extends Publications
+public abstract class Periodicals extends Publications
 {
-    protected String publisherSub;
-    protected int currentIssueNr; //Current number of publications in a year.
+    private String publisherSub;
+    private String genre;
+    private int issueNr; //Current issue Number.
 
     /**
      * Constructor for objects of class Periodicals
@@ -17,24 +18,40 @@ public class Periodicals extends Publications
     public Periodicals(String title)
     {
         super(title);
-        this.currentIssueNr = currentIssueNr;
+        this.issueNr = issueNr;
         
         // String publisher = getPublisher();
         //int yearPublished = getYearPublished();
         // int monthPublished = getMonthPublished();
         // int dayPublished = getDayPublished();
-        
-        setPublisher(publisherSub);
         //setDate();
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Set issueNR
      */
-    public void sampleMethod()
+    public void setIssueNr(int issueNr)
     {
+        this.issueNr = issueNr;
     }
+    
+    public int getIssueNr()
+    {
+        return issueNr;
+    }
+    
+    /**
+     * Set Genre
+     * @param genre, Genre of this article
+     */
+    public void setGenre(String genre)
+    {
+        this.genre = genre;
+    }
+    
+    public String getGenre()
+    {
+        return genre;
+    }
+    
 }

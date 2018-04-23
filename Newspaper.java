@@ -6,24 +6,32 @@
  */
 public class Newspaper extends Periodicals
 {
-    private String type = "Newspaper";
+    private static final String type = "Newspaper";
 
     /**
      * Constructor for objects of class Newspaper
      */
-    public Newspaper(String title)
+    public Newspaper(String title, String publisher, int issueNr,
+    int yearPublished,int monthPublished,int dayPublished)
     {
         super(title);
+        setIssueNr(issueNr);
+        setPublisher(publisher);
+        setDate(yearPublished, monthPublished, dayPublished);
     }
 
 
     /**
-     *
+     * 
      */
-    public String sample2Method()
+    public void newspaperDetails()
     {
-        String LongAssDescription = getTitle()+getPublisher()+getMonthPublished()+getDayPublished();
-        return LongAssDescription;
+        System.out.println("Article: "+type);
+        System.out.println("Title: "+getTitle());
+        System.out.println("Issue#: "+getIssueNr());
+        System.out.println("Date: "+getDate());
+        System.out.println(getPublisher());
+        
     }
 }
 

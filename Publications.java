@@ -22,7 +22,7 @@ public class Publications
     public Publications(String title)
     {
         this.title = title;
-        this.publisher = "N/P";
+        this.publisher  = "N/P";
         this.subscribed = false;
     }
 
@@ -56,6 +56,11 @@ public class Publications
         this.yearPublished = yearPublished;
         this.monthPublished = monthPublished;
         this.dayPublished = dayPublished;
+    }
+    
+    protected String getDate()
+    {
+        return yearPublished+"/"+monthPublished+"/"+dayPublished;
     }
     
     /**
