@@ -296,8 +296,9 @@ public class ApplicationUI
         while (stage == 5)
         {
             System.out.println("The book is now being added...");
-            register.addStandAloneBook().add(new Single_Book(publisher, title, author, edition));
+            
             System.out.println("The book has been added");
+            showMenu();
         }
     }
     
