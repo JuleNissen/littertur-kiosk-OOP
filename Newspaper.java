@@ -2,30 +2,36 @@
 /**
  * Models a newspaper publication.
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
 public class Newspaper extends Periodicals
 {
-    // instance variables - replace the example below with your own
-    //private int x;
+    private static final String type = "Newspaper";
 
     /**
      * Constructor for objects of class Newspaper
      */
-    public Newspaper(String title)
+    public Newspaper(String title, String publisher, int issueNr,
+    int yearPublished,int monthPublished,int dayPublished)
     {
         super(title);
+        setIssueNr(issueNr);
+        setPublisher(publisher);
+        setDate(yearPublished, monthPublished, dayPublished);
     }
 
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * 
      */
-    public void sampleMethod()
+    public void newspaperDetails()
     {
+        System.out.println("Article: "+type);
+        System.out.println("Title: "+getTitle());
+        System.out.println("Issue#: "+getIssueNr());
+        System.out.println("Date: "+getDate());
+        System.out.println(getPublisher());
+        
     }
 }
 

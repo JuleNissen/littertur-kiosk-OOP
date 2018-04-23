@@ -47,10 +47,15 @@ public class Publications
     public Publications(String title)
     {   
         this.title = title;
+<<<<<<< HEAD
+        this.publisher  = "N/P";
+        this.subscribed = false;
+=======
         this.publisher = "N/P";
         this.author = "N/A";
         
         //this.subscribed = false;
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
     }
     
     /**
@@ -85,6 +90,11 @@ public class Publications
         this.dayPublished = dayPublished;
     }
     
+    protected String getDate()
+    {
+        return yearPublished+"/"+monthPublished+"/"+dayPublished;
+    }
+    
     /**
      * Get title of publication
      * @return title of publication
@@ -100,6 +110,33 @@ public class Publications
     public void subscribe()
     {
         subscribed = true;
+    }
+       
+    /**
+     * Get year of date the publication was published
+     * @return year of publication
+     */
+    protected int getYearPublished()
+    {
+        return this.yearPublished;
+    }
+     
+    /**
+     * Get month of the year the publication was published
+     * @return month of publication
+     */
+    protected int getMonthPublished()
+    {
+        return this.monthPublished;
+    }
+     
+    /**
+     * Get day of the month the publication was published
+     * @return day of publication
+     */
+    protected int getDayPublished()
+    {
+        return this.dayPublished;
     }
     
     /**
@@ -119,9 +156,17 @@ public class Publications
         return this.author;
     }
     
-    protected void setPublisher(String publisher)
+    protected void setPublisher(String publisherSub)
     {
         this.publisher = publisher;
+    }
+
+    /**
+     * Set title of publication
+     */
+    protected void setTitle( String title)
+    {
+        this.title = title;
     }
     
     /**

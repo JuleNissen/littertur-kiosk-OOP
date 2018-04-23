@@ -41,7 +41,12 @@ comment3.params=
 comment3.target=void\ addStandAloneBooks()
 comment3.text=\r\n\ Adds\ new\ standalone\ books\r\n\ @param\ title\ for\ book\r\n
 comment4.params=
+<<<<<<< HEAD
+comment4.target=void\ addSeriesBooks()
+comment4.text=\r\n\ Adds\ new\ series\ of\ books\r\n\ @param\ title\ for\ book\r\n
+=======
 comment4.target=void\ addStandAloneBook()
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
 comment5.params=
 comment5.target=void\ addBookListToPublications()
 comment5.text=\r\n\ Add\ stand\ alone\ book\ list\ to\ publicationList\r\n

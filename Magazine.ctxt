@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Magazine
-comment0.text=\r\n\ Models\ a\ magazine\ publication.\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 09.04.2018\ (dd.mm.yyyy)\r\n
-comment1.params=title
-comment1.target=Magazine(java.lang.String)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Magazine\r\n
+comment0.text=\r\n\ Models\ a\ magazine\ publication.\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 22.04.2018\ (dd.mm.yyyy)\r\n
+comment1.params=title\ publisherSub\ issueNr\ genre\ yearPublished\ monthPublished\ dayPublished
+comment1.target=Magazine(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Magazine\r\n\ @param\ title,\ Title\ of\ the\ magazine\r\n\ @param\ publisher,\ Publisher\ of\ the\ magazine\r\n\ @param\ issueNr,\ Current\ issue\ number\ of\ the\ magazine\r\n\ @param\ yearPublished,\ The\ year\ when\ the\ magazine\ was\ first\ published\r\n\ @param\ monthPublished,\ The\ month\ when\ the\ magazine\ was\ first\ published\r\n\ @param\ dayPublished\ The\ day\ of\ the\ month\ when\ the\ magazine\ was\ first\ published\r\n
 comment2.params=
-comment2.target=void\ sampleMethod()
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.target=void\ magazineDetails()
+comment2.text=\r\n\ \r\n
 numComments=3

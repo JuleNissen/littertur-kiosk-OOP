@@ -1,6 +1,30 @@
 #BlueJ class context
 comment0.target=Publications
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ ReadingMaterials\ here.\r\n\r\n\ @author\ Alejandro\ Gr\u00F8nhaug,\ Jahn-willy\r\n\ @version\ 2018-02-09\r\n
+<<<<<<< HEAD
+comment1.params=title
+comment1.target=Publications(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Publications.\r\n\ @param\ title\ of\ the\ publication\r\n
+comment10.params=
+comment10.target=java.lang.String\ getPublisher()
+comment10.text=\r\n\ get\ publisher\ as\ string\r\n\ @Return\ publisher\ as\ string\r\n
+comment11.params=publisherSub
+comment11.target=void\ setPublisher(java.lang.String)
+comment12.params=title
+comment12.target=void\ setTitle(java.lang.String)
+comment12.text=\r\n\ Set\ title\ of\ publication\r\n
+comment13.params=
+comment13.target=java.lang.String\ summaryAsString()
+comment13.text=\r\nPrints\ details\ of\ Publication\r\n\ @Return\ summary\r\n
+comment2.params=title\ publisher\ yearPublished\ monthPublished\ dayPublished
+comment2.target=Publications(java.lang.String,\ java.lang.String,\ int,\ int,\ int)
+comment2.text=\r\n\ Constructor\ for\ objects\ of\ class\ Publications.\r\n\ @param\ title\ of\ the\ publication\r\n\ @param\ author\r\n\ @param\ yearPublished\r\n\ @param\ monthPublished\r\n\ @param\ dayPublished\r\n
+comment3.params=yearPublished\ monthPublished\ dayPublished
+comment3.target=void\ setDate(int,\ int,\ int)
+comment3.text=\r\nSets\ the\ date\ of\ publication\r\n@param\ yearPublished\ Year\ when\ the\ publication\ was\ first\ published\r\n@param\ monthPublished\ Month\ when\ the\ publication\ was\ first\ published\r\n@param\ dayPublished\ Day\ when\ the\ publication\ was\ first\ published\r\n
+comment4.params=
+comment4.target=java.lang.String\ getDate()
+=======
 comment1.params=publisher\ title\ author\ edition
 comment1.target=Publications(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Publications.\r\n\ This\ constructor\ is\ used\ by\ Books\r\n\ @param\ publisher\ of\ the\ publication\r\n\ @param\ title\ of\ the\ publication\r\n\ @param\ author\ of\ the\ publication\r\n\ @param\ edition\r\n
@@ -16,6 +40,7 @@ comment3.text=\r\n\ Constructor\ for\ objects\ of\ class\ Publications.\r\n\ @pa
 comment4.params=yearPublished\ monthPublished\ dayPublished
 comment4.target=void\ setDate(int,\ int,\ int)
 comment4.text=\r\nSets\ the\ date\ of\ publication\r\n@param\ yearPublished\ Year\ when\ the\ publication\ was\ first\ published\r\n@param\ monthPublished\ Month\ when\ the\ publication\ was\ first\ published\r\n@param\ dayPublished\ Day\ when\ the\ publication\ was\ first\ published\r\n
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
 comment5.params=
 comment5.target=java.lang.String\ getTitle()
 comment5.text=\r\n\ Get\ title\ of\ publication\r\n\ @return\ title\ of\ publication\r\n
@@ -23,6 +48,17 @@ comment6.params=
 comment6.target=void\ subscribe()
 comment6.text=\r\nSigns\ a\ subscribtion\ for\ the\ Publication\r\n
 comment7.params=
+<<<<<<< HEAD
+comment7.target=int\ getYearPublished()
+comment7.text=\r\n\ Get\ year\ of\ date\ the\ publication\ was\ published\r\n\ @return\ year\ of\ publication\r\n
+comment8.params=
+comment8.target=int\ getMonthPublished()
+comment8.text=\r\n\ Get\ month\ of\ the\ year\ the\ publication\ was\ published\r\n\ @return\ month\ of\ publication\r\n
+comment9.params=
+comment9.target=int\ getDayPublished()
+comment9.text=\r\n\ Get\ day\ of\ the\ month\ the\ publication\ was\ published\r\n\ @return\ day\ of\ publication\r\n
+numComments=14
+=======
 comment7.target=java.lang.String\ getPublisher()
 comment7.text=\r\n\ get\ publisher\ as\ string\r\n\ @Return\ publisher\ as\ string\r\n
 comment8.params=
@@ -31,3 +67,4 @@ comment8.text=\r\n\ get\ author\ as\ string\r\n\ @return\ author\ as\ string\r\n
 comment9.params=publisher
 comment9.target=void\ setPublisher(java.lang.String)
 numComments=11
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6

@@ -4,12 +4,13 @@
  * ie something that is published periodically and has an issue number.
  *
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
 public abstract class Periodicals extends Publications
 {
-    // instance variables - replace the example below with your own
-    private int issueNr;
+    private String publisherSub;
+    private String genre;
+    private int issueNr; //Current issue Number.
 
     /**
      * Constructor for objects of class Periodicals
@@ -18,16 +19,39 @@ public abstract class Periodicals extends Publications
     {
         super(title);
         this.issueNr = issueNr;
-        //String perTitle = ;
+        
+        // String publisher = getPublisher();
+        //int yearPublished = getYearPublished();
+        // int monthPublished = getMonthPublished();
+        // int dayPublished = getDayPublished();
+        //setDate();
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Set issueNR
      */
-    public void sampleMethod()
+    public void setIssueNr(int issueNr)
     {
+        this.issueNr = issueNr;
     }
+    
+    public int getIssueNr()
+    {
+        return issueNr;
+    }
+    
+    /**
+     * Set Genre
+     * @param genre, Genre of this article
+     */
+    public void setGenre(String genre)
+    {
+        this.genre = genre;
+    }
+    
+    public String getGenre()
+    {
+        return genre;
+    }
+    
 }

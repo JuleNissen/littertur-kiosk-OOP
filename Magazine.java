@@ -2,28 +2,43 @@
 /**
  * Models a magazine publication.
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
 public class Magazine extends Periodicals
 {
-    // instance variables - replace the example below with your own
-    //private int x;
 
+    private final String type = "Magazine"; //Type of article
+    private String genre; //Genre/demographic of this magazine
     /**
      * Constructor for objects of class Magazine
+     * @param title, Title of the magazine
+     * @param publisher, Publisher of the magazine
+     * @param issueNr, Current issue number of the magazine
+     * @param yearPublished, The year when the magazine was first published
+     * @param monthPublished, The month when the magazine was first published
+     * @param dayPublished The day of the month when the magazine was first published
      */
-    public Magazine(String title)
+    public Magazine(String title, String publisherSub, int issueNr,
+    String genre,int yearPublished,int monthPublished,int dayPublished)
     {
         super(title);
+        setIssueNr(issueNr);
+        setGenre(genre);
+        setPublisher(publisherSub);
+        setDate(yearPublished, monthPublished, dayPublished);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * 
      */
-    public void sampleMethod()
+    public void magazineDetails()
     {
+        System.out.println("Article: "+type);
+        System.out.println("Title: "+getTitle());
+        System.out.println("Genre:"+getGenre());
+        System.out.println("Issue#: "+getIssueNr());
+        System.out.println("Date: "+getDate());
+        System.out.println(getPublisher());
+        
     }
 }

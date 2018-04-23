@@ -2,29 +2,36 @@
 /**
  * Models a comic publication.
  * @author Alejandro M T Grønhaug
- * @version 09.04.2018 (dd.mm.yyyy)
+ * @version 22.04.2018 (dd.mm.yyyy)
  */
 public class Comics extends Periodicals
 {
-    // instance variables - replace the example below with your own
-    //private int x;
-
+    private static final String type = "Comics";
+    
     /**
      * Constructor for objects of class Comics
      */
-    public Comics(String title)
+    public Comics(String title, String publisherSub, int issueNr,
+    String genre,int yearPublished,int monthPublished,int dayPublished)
     {
         super(title);
+        setGenre(genre);
+        setIssueNr(issueNr);
+        setPublisher(publisherSub);
+        setDate(yearPublished, monthPublished, dayPublished);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * 
      */
-    public void sampleMethod()
+    public void comicDetails()
     {
+        System.out.println("Article: "+type);
+        System.out.println("Title: "+getTitle());
+        System.out.println("Genre: "+getGenre());
+        System.out.println("Issue#: "+getIssueNr());
+        System.out.println("Date: "+getDate());
+        System.out.println("Publisher: "+getPublisher());
+        
     }
 }
-
