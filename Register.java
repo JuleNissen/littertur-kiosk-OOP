@@ -15,6 +15,8 @@ public class Register
     private ArrayList<Series_Book> SeriesBooks;
 
     private ArrayList<Publications>  listOfPublications;
+    
+    Scanner Input = new Scanner(System.in);
 
     /**
      * Constructor for objects of class Register
@@ -297,6 +299,21 @@ public class Register
         return delete;
     }
 
+    /**
+     * Search and print publication given by user.
+     * If method does not find publication with same name will print
+     * "Could not find any Finn meg in publication list"
+     */
+    public void findPublicationUserDefined()
+    {
+        System.out.println("Please enter title to search for");
+        Scanner reader = new Scanner(System.in);
+        String title = Input.nextLine();
+
+        printAllPublicationsWithTitle(title);
+    }
+    
+    
     /**
      * Return 'true' if the publication list is rempty
      * @Return 'true' if the publication list is rempty

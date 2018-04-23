@@ -80,7 +80,7 @@ public class ApplicationUI
                     break;
 
                     case 5:
-                    this.findPublicationUserDefined();
+                    register.findPublicationUserDefined();
                     break;
 
                     case 6:
@@ -326,19 +326,5 @@ public class ApplicationUI
     private void findPublicationFinnmeg()
     {
         register.findAllPublicationFinnMeg();
-    }
-
-    /**
-     * Search and print publication given by user.
-     * If method does not find publication with same name will print
-     * "Could not find any Finn meg in publication list"
-     */
-    private void findPublicationUserDefined()
-    {
-        System.out.println("Please enter title to search for");
-        Scanner reader = new Scanner(System.in);
-        String title = Input.nextLine();
-
-        register.printAllPublicationsWithTitle(title);
     }
 }
