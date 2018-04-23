@@ -6,7 +6,7 @@
  */
 public class Comics extends Periodicals
 {
-    private static final String type = "Comics";
+    private static final String type = "Comic";
     
     /**
      * Constructor for objects of class Comics
@@ -22,7 +22,7 @@ public class Comics extends Periodicals
     }
 
     /**
-     * 
+     * Displays details for article Comic
      */
     public void comicDetails()
     {

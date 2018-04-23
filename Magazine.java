@@ -29,7 +29,7 @@ public class Magazine extends Periodicals
     }
 
     /**
-     * 
+     * Displays details for article Magazine
      */
     public void magazineDetails()
     {

@@ -22,7 +22,7 @@ public class Newspaper extends Periodicals
 
 
     /**
-     * 
+     * Displays details for article Newspaper
      */
     public void newspaperDetails()
     {

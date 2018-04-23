@@ -2,19 +2,11 @@
 dependency1.from=PublicationsTest
 dependency1.to=Publications
 dependency1.type=UsesDependency
-<<<<<<< HEAD
-dependency2.from=Main
-dependency2.to=ApplicationUI
-dependency2.type=UsesDependency
-dependency3.from=PublicationsTest
-dependency3.to=Publications
-=======
 dependency2.from=ApplicationUI
 dependency2.to=Register
 dependency2.type=UsesDependency
 dependency3.from=RegisterTest
 dependency3.to=Register
->>>>>>> 45cdd40488bec0c411f0114eb5dc7ae142b1438e
 dependency3.type=UsesDependency
 dependency4.from=Register
 dependency4.to=Single_Book
@@ -25,42 +17,21 @@ dependency5.type=UsesDependency
 dependency6.from=Register
 dependency6.to=Publications
 dependency6.type=UsesDependency
-<<<<<<< HEAD
-dependency7.from=ApplicationUI
-dependency7.to=Register
-dependency7.type=UsesDependency
-editor.fx.0.height=922
-editor.fx.0.width=1074
-editor.fx.0.x=825
-editor.fx.0.y=38
-objectbench.height=84
-objectbench.width=443
-package.divider.horizontal=0.5976095617529881
-package.divider.vertical=0.8455008488964346
-package.editor.height=491
-package.editor.width=643
-package.editor.x=37
-package.editor.y=75
-package.frame.height=708
-package.frame.width=791
-package.numDependencies=7
-=======
 editor.fx.0.height=1047
 editor.fx.0.width=974
 editor.fx.0.x=953
 editor.fx.0.y=0
-objectbench.height=83
+objectbench.height=110
 objectbench.width=1896
 package.divider.horizontal=0.600265604249668
-package.divider.vertical=0.9033297529538131
-package.editor.height=834
+package.divider.vertical=0.874328678839957
+package.editor.height=807
 package.editor.width=1790
-package.editor.x=-9
-package.editor.y=-9
+package.editor.x=100
+package.editor.y=100
 package.frame.height=1050
 package.frame.width=1938
 package.numDependencies=6
->>>>>>> 45cdd40488bec0c411f0114eb5dc7ae142b1438e
 package.numTargets=13
 package.showExtends=true
 package.showUses=true

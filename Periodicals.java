@@ -29,6 +29,7 @@ public abstract class Periodicals extends Publications
 
     /**
      * Set issueNR
+     * @param issueNr, Issue number of this article
      */
     public void setIssueNr(int issueNr)
     {
@@ -49,6 +50,9 @@ public abstract class Periodicals extends Publications
         this.genre = genre;
     }
     
+    /**
+     * @return genre, Genre of this article
+     */
     public String getGenre()
     {
         return genre;
