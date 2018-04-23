@@ -125,9 +125,7 @@ public class Register
             listOfPublications.add(StandAloneBook.get(i));
         }
     }
-<<<<<<< HEAD
     
-=======
 
     /**
      * Adds new series of books
@@ -140,7 +138,6 @@ public class Register
         addBookListToPublications2();
     }
 
->>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
     /**
      * Add book series list to publications list
      * Really a dublicate of addBookListToPublications()

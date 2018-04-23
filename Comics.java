@@ -28,10 +28,10 @@ public class Comics extends Periodicals
     {
         System.out.println("Article: "+type);
         System.out.println("Title: "+getTitle());
-        System.out.println("Genre:"+getGenre());
+        System.out.println("Genre: "+getGenre());
         System.out.println("Issue#: "+getIssueNr());
         System.out.println("Date: "+getDate());
-        System.out.println(getPublisher());
+        System.out.println("Publisher: "+getPublisher());
         
     }
 }
