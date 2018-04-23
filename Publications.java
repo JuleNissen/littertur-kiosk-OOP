@@ -17,25 +17,6 @@ public class Publications
     private int yearPublished;
     private boolean subscribed;
     
-    // /**
-     // * Constructor for objects of class Publications.
-     // * This constructor is used by Books
-     // * @param publisher of the publication
-     // * @param title of the publication
-     // * @param author of the publication
-     // * @param edition
-     // */
-    // public Publications(String title, String publisher, String author, int edition)
-    // {   
-        // this.publisher = publisher;
-        // this.title = title;
-        // this.author = author;
-        // this.edition = 1;
-        // this.yearPublished = 0000;
-        // this.monthPublished = 00;
-        // this.dayPublished = 00;
-    // }
-
     /**
      * Constructor for objects of class Publications.
      * This contructor is used by Periodicals (compiler reasons)

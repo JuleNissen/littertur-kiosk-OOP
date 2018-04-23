@@ -11,7 +11,7 @@ public class Books extends Publications
 {
     private String genre;       //Genre as String
     private int editionNr;      //Edition as int
-    private String author;
+    private String author;      //Author as String
 
     /**
      * Constructor for objects of class Books
@@ -24,7 +24,6 @@ public class Books extends Publications
     public Books(String title, String author, String publisher)
     {
         super(title, author, publisher);
-
         this.genre = genre;
         this.editionNr = editionNr;
     }
@@ -57,6 +56,9 @@ public class Books extends Publications
         return editionNr;
     }
     
+    /**
+     * 
+     */
     public void setAuthor(String author)
     {
         this.author = author;
