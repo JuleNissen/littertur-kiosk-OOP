@@ -33,7 +33,7 @@ public class ApplicationUI
     private String[] publicationItems = 
         {
             "1. Add Standalone book",
-            "2. Add book series",
+            "2. Add book series(filler)",
             "3. Add newspaper",
             "4. Add Comics",
             "5. Add magazine"
@@ -183,7 +183,7 @@ public class ApplicationUI
                 switch (PublicationMenu) 
                 {
                     case 1:
-                    register.addStandAloneBooks();
+                    register.addStandAloneBook();
                     System.out.println("StandAlone Book list should have been filled now");
                     break;
 
@@ -246,7 +246,62 @@ public class ApplicationUI
         }
         return PublicationMenu;
     }
+    
+    public void addStandAloneBook()
+    {
+        Scanner reader = new Scanner(System.in);
+        int stage = 1;
 
+        String publisher = null;
+        String title = null;
+        String author = null;
+        int edition = 0;
+        
+        int maxEdition = 10;
+        
+        while (stage == 1)
+        {
+            System.out.println("Enter the book publisher:");
+            publisher = reader.nextLine();
+            stage = 2;
+        }
+        
+        while (stage == 2)
+        {
+            System.out.println("Enter the book title");
+            title = reader.nextLine();
+            stage = 3;
+        }
+        
+        while (stage == 3)
+        {
+            System.out.println("Please name the author of the book");
+            author = reader.nextLine();
+            stage = 4;
+        }
+        
+        while (stage == 4)
+        {
+            System.out.println("Enter the book edition (1 to 10)");
+            while ((maxEdition >=0) && (maxEdition <= 10))
+            {
+                if(reader.hasNextInt())
+                {
+                    maxEdition = reader.nextInt();
+                }
+            }
+            stage = 5;
+        }
+        
+        while (stage == 5)
+        {
+            System.out.println("The book is now being added...");
+            
+            System.out.println("The book has been added");
+            showMenu();
+        }
+    }
+    
     /**
      * Find and display a product based om name (title).
      * As with the addNewProduct()-method, you have to
