@@ -20,13 +20,10 @@ public class Single_Book extends Books
      * Calls setAuthor in super-class to add author.
      * Set isInSeries to 'false', this is a singel book.
      */
-    public Single_Book(String title, String author)
+    public Single_Book(String publisher, String title, String author, int edition)
     {
-        super(title);
-        super.setAuthor(author);
+        super(publisher, title, author, edition);
         isInSeries = false;
-        edition = 1;
-        SingleMap = new HashMap<>();
     }
     
     // protected void someThing(List<Books> newBooks)

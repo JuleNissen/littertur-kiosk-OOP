@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 /**
  * Models a digital register for various kinds of Publications
@@ -42,9 +43,62 @@ public class Register
      */
     public void addStandAloneBooks()
     {
-        StandAloneBook.add(new Single_Book("StandAlone BookTitle", "StandAlone BookPublisher"));
-        StandAloneBook.add(new Single_Book("Single title", "single publisher"));
+        StandAloneBook.add(new Single_Book("Publisher", "Title", "Author", 00));
+        StandAloneBook.add(new Single_Book("Gyldendal", "Berit på jentetur", "Bob-Kåre", 2));
         addBookListToPublications();
+    }
+
+    public void addStandAloneBook()
+    {
+        Scanner reader = new Scanner(System.in);
+        int stage = 1;
+
+        String publisher = null;
+        String title = null;
+        String author = null;
+        int edition = 0;
+        
+        int maxEdition = 10;
+        
+        while (stage == 1)
+        {
+            System.out.println("Enter the book publisher:");
+            publisher = reader.nextLine();
+            stage = 2;
+        }
+        
+        while (stage == 2)
+        {
+            System.out.println("Enter the book title");
+            title = reader.nextLine();
+            stage = 3;
+        }
+        
+        while (stage == 3)
+        {
+            System.out.println("Please name the author of the book");
+            author = reader.nextLine();
+            stage = 4;
+        }
+        
+        while (stage ==4)
+        {
+            System.out.println("Enter the published year (four digits)");
+            while ((maxEdition >=0) && (maxEdition <= 10))
+            {
+                if(reader.hasNextInt())
+                {
+                    maxEdition = reader.nextInt();
+                }
+            }
+        }
+        
+        while (stage == 4)
+        {
+            System.out.println("The book is now being added...");
+            StandAloneBook.add(new Single_Book(publisher, title, author, edition));
+            System.out.println("The book has been added");
+        }
     }
 
     /**
@@ -71,7 +125,22 @@ public class Register
             listOfPublications.add(StandAloneBook.get(i));
         }
     }
+<<<<<<< HEAD
     
+=======
+
+    /**
+     * Adds new series of books
+     * @param title for book
+     */
+    public void addSeriesBooks()
+    {
+        SeriesBooks.add(new Series_Book("Publisher", "Title", "Author", 1));
+        SeriesBooks.add(new Series_Book("Sovjet Print", "Harry Potter", "Joseph Stalin", 1));
+        addBookListToPublications2();
+    }
+
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
     /**
      * Add book series list to publications list
      * Really a dublicate of addBookListToPublications()
@@ -204,11 +273,13 @@ public class Register
             while (foundPublicationIt.hasNext())
             {
                 Publications p = foundPublicationIt.next();
-                System.out.println("Found:\n"
-                    + "Title: "
-                    + p.getTitle() 
-                    + ", Published by: "
-                    + p.getPublisher());
+                System.out.println("Found:\n" + p.summaryAsString());
+                    // + "Title: "
+                    // + p.getTitle() 
+                    // + ", Author: "
+                    // + p.getAuthor()
+                    // + ", Published by: "
+                    // + p.getPublisher());
             }
         }
         else
@@ -232,11 +303,13 @@ public class Register
             while (foundPublicationIt.hasNext())
             {
                 Publications p = foundPublicationIt.next();
-                System.out.println("Found:\n"
-                    + "Title: "
-                    + p.getTitle() 
-                    + ", Author: "
-                    + p.getPublisher());
+                System.out.println("Found:\n" + p.summaryAsString());
+                    // + "Title: "
+                    // + p.getTitle() 
+                    // + ", Author: "
+                    // + p.getAuthor()
+                    // + ", published by:"
+                    // + p.getPublisher());
             }
         }
         else

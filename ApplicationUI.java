@@ -68,7 +68,7 @@ public class ApplicationUI
                     break;
 
                     case 2:
-                    this.listAllPublications();
+                    register.listAllPublications();
                     break;
 
                     case 3:
@@ -84,11 +84,11 @@ public class ApplicationUI
                     break;
 
                     case 6:
-                    listAllStandAloneBooks(); //Oppgaven ønsker at man skal kunne liste opp de ulike 
+                    register.listAllStandAloneBooks(); //Oppgaven ønsker at man skal kunne liste opp de ulike 
                     break;                      // utgivningene. skal vi gjøre det på denne måten?
 
                     case 7:
-                    listBookSeries();
+                    register.listAllSeriesBooks();
                     break;
 
                     case 8:
@@ -162,24 +162,6 @@ public class ApplicationUI
     // }
 
     /**
-     * Lists all the products/literature in the register
-     */
-    private void listAllPublications()
-    {
-        register.listAllPublications();
-    }
-
-    private void listAllStandAloneBooks()
-    {
-        register.listAllStandAloneBooks();
-    }
-
-    private void listBookSeries()
-    {
-        register.listAllSeriesBooks();
-    }
-
-    /**
      * Made new menu to show user when *he wants to add more publications themselves
      * We do like menus don't we! revert by commenting menu and uncomment
      * single line comments under start.
@@ -188,8 +170,8 @@ public class ApplicationUI
     {
         System.out.println("addNewProduct() was called");
         System.out.println("Will you be adding a book or a periodical?");
-        // Scanner reader = new Scanner(System.in);
-        // String title = Input.next();
+        //Scanner reader = new Scanner(System.in);
+        //String title = Input.next();
         // register.addPublicationsTest2(title);
         boolean quit = false;
 

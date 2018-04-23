@@ -8,8 +8,13 @@ dependency2.type=UsesDependency
 dependency3.from=PublicationsTest
 dependency3.to=Publications
 dependency3.type=UsesDependency
+<<<<<<< HEAD
 dependency4.from=Main
 dependency4.to=ApplicationUI
+=======
+dependency4.from=ApplicationUI
+dependency4.to=Register
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
 dependency4.type=UsesDependency
 dependency5.from=Register
 dependency5.to=Single_Book
@@ -20,6 +25,7 @@ dependency6.type=UsesDependency
 dependency7.from=Register
 dependency7.to=Publications
 dependency7.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=747
 editor.fx.0.width=1162
 editor.fx.0.x=116
@@ -34,6 +40,22 @@ package.editor.x=351
 package.editor.y=4
 package.frame.height=740
 package.frame.width=1401
+=======
+editor.fx.0.height=1047
+editor.fx.0.width=974
+editor.fx.0.x=953
+editor.fx.0.y=0
+objectbench.height=87
+objectbench.width=751
+package.divider.horizontal=0.600265604249668
+package.divider.vertical=0.8453947368421053
+package.editor.height=507
+package.editor.width=661
+package.editor.x=994
+package.editor.y=155
+package.frame.height=708
+package.frame.width=791
+>>>>>>> 1ac937351aed8e99c3d44a05b4f69dcb65b5b9b6
 package.numDependencies=7
 package.numTargets=13
 package.showExtends=true

@@ -17,12 +17,10 @@ public class Series_Book extends Books
      * Call inSeries in super-class to make it true.
      * Calls setAuthor in super-class to add author.
      */
-    public Series_Book(String title, String author)
+    public Series_Book(String publisher, String title, String author, int edition)
     {
-        super(title);
-        super.setAuthor(author);
+        super(publisher, title, author, edition);
         isInSeries = true;
-        seriesMap = new HashMap<>();
     }
     
     /**
