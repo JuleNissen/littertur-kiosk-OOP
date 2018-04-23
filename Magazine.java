@@ -38,7 +38,7 @@ public class Magazine extends Periodicals
         System.out.println("Genre:"+getGenre());
         System.out.println("Issue#: "+getIssueNr());
         System.out.println("Date: "+getDate());
-        System.out.println(getPublisher());
+        System.out.println("Publisher: "+getPublisher());
         
     }
 }
