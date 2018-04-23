@@ -15,6 +15,7 @@ comment4.target=int\ getEditionNr()
 comment4.text=\r\n\ get\ edition\ number\ for\ book\r\n\ @return\ edition\ number\ as\ int\r\n
 comment5.params=author
 comment5.target=void\ setAuthor(java.lang.String)
+comment5.text=\r\n\ \r\n
 comment6.params=
 comment6.target=java.lang.String\ getAuthor()
 comment6.text=\r\n\ get\ author\ as\ string\r\n\ @return\ author\ as\ string\r\n
