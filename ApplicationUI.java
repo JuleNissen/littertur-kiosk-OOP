@@ -193,15 +193,15 @@ public class ApplicationUI
                     break;
 
                     case 3:
-                    System.out.println("WIP");
+                    System.out.println("WIP"); //newspaper
                     break;
 
                     case 4:
-                    System.out.println("WIP");
+                    System.out.println("WIP"); //comics
                     break;
 
                     case 5:
-                    System.out.println("WIP");
+                    System.out.println("WIP"); //magazine
                     break;
 
                     case 6:
@@ -246,7 +246,9 @@ public class ApplicationUI
         }
         return PublicationMenu;
     }
-    
+    /**
+     * test for å la bruker legge til selv!
+     */
     public void addStandAloneBook()
     {
         Scanner reader = new Scanner(System.in);
