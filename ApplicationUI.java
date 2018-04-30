@@ -22,11 +22,9 @@ public class ApplicationUI
         {
             "1. Fill publication list",
             "2. List all publications",
-            "3. Find a publication named Finn meg and its author",
-            "4. Add a publication",
-            "5. Search for own publication",
-            "6. List all stand alone books",
-            "7. List all book series"
+            "3. Add a publication",
+            "4. Search for publication",
+            "5. List a type of publication"
 
         };
 
@@ -72,26 +70,18 @@ public class ApplicationUI
                     break;
 
                     case 3:
-                    this.findPublicationFinnmeg();
+                    this.addNewProduct();
                     break;
 
                     case 4:
-                    this.addNewProduct(); // Følg denne for å se endringene mine!
-                    break;
-
-                    case 5:
                     register.findPublicationUserDefined();
                     break;
 
-                    case 6:
-                    register.listAllStandAloneBooks(); //Oppgaven ønsker at man skal kunne liste opp de ulike 
-                    break;                      // utgivningene. skal vi gjøre det på denne måten?
-
-                    case 7:
-                    register.isAGivenPublication("SeriesBook");
+                    case 5:
+                    register.isAGivenPublication();
                     break;
 
-                    case 8:
+                    case 6:
                     System.out.println("\nThank you for using Media stand v0.5. Bye!\n");
                     quit = true;
                     break;
@@ -114,7 +104,7 @@ public class ApplicationUI
      */
     public void fillPublicationList()
     {
-        register.fillWithDummyData();
+        fillWithDummyData();
         System.out.println("Publication list should have been filled now");
     }
 
@@ -171,12 +161,12 @@ public class ApplicationUI
                 switch (PublicationMenu) 
                 {
                     case 1:
-                    register.fillStandAloneBooks(); //Books er med fillers, Book er egen bok
+                    //Add standAlone book
                     System.out.println("StandAlone Book list should have been filled now");
                     break;
 
                     case 2:
-                    register.fillSeriesBooks();
+                    //Add book series
                     System.out.println("Book serie should have been filled now");
                     break;
 
@@ -297,10 +287,8 @@ public class ApplicationUI
         {
             System.out.println("Your newspaper is being added...");
             Publications publication = new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
-            register.addPublication(publication);
             
-            
-            register.addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
+            addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
             System.out.println("Newspaper added!");
             break;
         }
@@ -321,13 +309,45 @@ public class ApplicationUI
         System.out.println("Find publication with ");
         register.findAllPublicationsByTitle(""); //parameter må fikses før bruk
     }
-
-    /**
-     * Search and print publication named "Finn meg"
-     * if method dont find "Finn meg" prints "Could not find any Finn meg in publication list"
-     */
-    private void findPublicationFinnmeg()
+    
+    public void addStandAloneBook(String publisher, String title, String author, int edition, int yearPublished,int monthPublished,int dayPublished)
     {
-        register.findAllPublicationFinnMeg();
+        register.addBookPublication(publisher, title, author, yearPublished, monthPublished, dayPublished);
+    }
+
+    public void addSeriesBook(String title, String publisher, String author, int edition, int yearPublished, int monthPublished, int dayPublished)
+    {
+        register.addBookPublication(publisher, title, author, yearPublished, monthPublished, dayPublished);
+    }
+
+    public void addNewspaper(String title, String publisher, int issueNr, int yearPublished,int monthPublished,int dayPublished)
+    {
+register.addPeriodicalPublication2(publisher, title, issueNr, yearPublished, monthPublished, dayPublished);
+    }
+
+    public void addComics(String title, String publisher, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
+    {
+register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublished, monthPublished, dayPublished);
+    }
+
+    public void addMagazine(String title, String publisher, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
+    {
+register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublished, monthPublished, dayPublished);
+    } 
+    
+    /**
+     * Fills the list with dummy data
+     */    
+    public void fillWithDummyData()
+    {
+        register.addBookPublication("title", "publisher", "author", 2006, 12, 31);
+        register.addBookPublication("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16);
+        
+        register.addBookPublication("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
+        
+        register.addPeriodicalPublication2("Dagbladet", "Aller Media AS", 25, 2010, 10, 29); 
+        
+        register.addPeriodicalPublication("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
+        register.addPeriodicalPublication("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
     }
 }

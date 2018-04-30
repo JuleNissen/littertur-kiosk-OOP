@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Newspaper
+comment0.text=\r\n\ Models\ a\ newspaper\ publication.\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 22.04.2018\ (dd.mm.yyyy)\r\n
+comment1.params=title\ publisher\ issueNr\ yearPublished\ monthPublished\ dayPublished
+comment1.target=Newspaper(java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Newspaper\r\n
+comment2.params=
+comment2.target=java.lang.String\ getType()
+comment2.text=\r\n\ @return\ value\ of\ field\ type\r\n
+comment3.params=
+comment3.target=void\ newspaperDetails()
+comment3.text=\r\n\ Displays\ details\ for\ article\ Newspaper\r\n
+numComments=4

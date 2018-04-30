@@ -11,7 +11,8 @@ public class Publications
     private String title; //Title of publication as String
     private String publisher;
     private String author;
-    private int edition; 
+    private int issueNr; 
+    private String genre;
     private int monthPublished;
     private int dayPublished;
     private int yearPublished;
@@ -31,6 +32,7 @@ public class Publications
         this.author = author;
         this.publisher = publisher;
     }
+
     
     public Publications(String title)
     {
@@ -46,24 +48,45 @@ public class Publications
         this.title = title;
         this.publisher  = publisher;
     }
-    
+   
     /**
-     * Constructor for objects of class Publications.
-     * @param title of the publication
-     * @param author
-     * @param yearPublished
-     * @param monthPublished
-     * @param dayPublished
+     * For periodicals with genre
      */
-    public Publications(String title, String author, int yearPublished, 
-    int monthPublished,int dayPublished)
+    public Publications(String publisher, String title, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
     {
         this.title = title;
+        this.publisher  = publisher;
+        this.issueNr = issueNr;
+        this.genre = genre;
+        this.yearPublished = yearPublished;
+        this.monthPublished = monthPublished;
+        this.dayPublished = dayPublished;
+    }
+    
+    /**
+     * For periodicals without genre
+     */
+    public Publications(String publisher, String title, int issueNr, int yearPublished,int monthPublished,int dayPublished)
+    {
+        this.title = title;
+        this.publisher  = publisher;
+        this.issueNr = issueNr;
+        this.yearPublished = yearPublished;
+        this.monthPublished = monthPublished;
+        this.dayPublished = dayPublished;
+    }
+    
+    /**
+     * For books.
+     */
+    public Publications(String publisher, String title, String author, int yearPublished,int monthPublished,int dayPublished)
+    {
+        this.title = title;
+        this.publisher  = publisher;
         this.author = author;
         this.yearPublished = yearPublished;
         this.monthPublished = monthPublished;
         this.dayPublished = dayPublished;
-        this.subscribed = false;
     }
     
     /**

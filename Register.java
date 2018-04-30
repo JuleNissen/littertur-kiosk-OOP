@@ -11,8 +11,6 @@ import java.util.Scanner;
  */
 public class Register
 {
-    private ArrayList<Single_Book> StandAloneBook;
-    private ArrayList<Series_Book> SeriesBooks;
     private ArrayList<Publications>  listOfPublications;
 
     Scanner Input = new Scanner(System.in);
@@ -23,153 +21,50 @@ public class Register
     public Register()
     {
         this.listOfPublications = new ArrayList<Publications>();
-        // this.StandAloneBook = new ArrayList<Single_Book>();
-        // this.SeriesBooks = new ArrayList<Series_Book>();
-    }
-
-    /**
-     * Adds new standalone books
-     * @param title for book
-     */
-    public void fillStandAloneBooks()
-    {
-        listOfPublications.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
-        listOfPublications.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
-        // addBookListToPublications();
-    }
-
-    /**
-     * Fills the list with dummy data
-     */    
-    public void fillWithDummyData()
-    {
-        listOfPublications.add(new Single_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
-        listOfPublications.add(new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 4, 2013, 5, 16));
-
-        listOfPublications.add(new Series_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
-        listOfPublications.add(new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 5, 1962, 3, 12));
-
-        listOfPublications.add(new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29));
-
-        listOfPublications.add(new Comics("Donald Duck", "Egmont", 12, "Comedy", 1998, 04, 24));    
-
-        listOfPublications.add(new Magazine("Ingeniøren", "NITO ", 01, "Vitenskap", 2012, 01, 04));
-    }
-
-    public void addPublication(Publications publication)
-    {
-        listOfPublications.add(publication);
     }
     
-    public void addStandAloneBook(String Publisher, String title, String author, int edition, int yearPublished,int monthPublished,int dayPublished)
-    {
-        listOfPublications.add(new Single_Book(title, Publisher, author, edition, yearPublished, monthPublished, dayPublished));
-    }
-
-    public void addSeriesBook(String title, String publisher, String author, int edition, int yearPublished, int monthPublished, int dayPublished)
-    {
-        listOfPublications.add(new Series_Book(title, publisher, author, edition, yearPublished, monthPublished, dayPublished));
-    }
-
-    public void addNewspaper(String title, String publisher, int issueNr, int yearPublished,int monthPublished,int dayPublished)
-    {
-        listOfPublications.add(new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished));
-    }
-
-    public void addComics(String title, String publisher, int issueNr, String genre,int yearPublished,int monthPublished,int dayPublished)
-    {
-        listOfPublications.add(new Comics( title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished));
-    }
-
-    public void addMagazine(String title, String publisher, int issueNr, String genre,int yearPublished,int monthPublished,int dayPublished)
-    {
-        listOfPublications.add(new Magazine( title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished));
-    } 
-
     /**
-     * Adds new series of books
-     * @param title for book
+     * adds a new book to publication list
      */
-    public void fillSeriesBooks()
+    public void addBookPublication(String publisher, String title, String author, int yearPublished,int monthPublished,int dayPublished)
     {
-        SeriesBooks.add(new Series_Book("Title", "Publisher", "Author", 1, 2006, 12, 31));
-        SeriesBooks.add(new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 5, 1962, 3, 12));
-        addBookListToPublications2();
+        listOfPublications.add(new Publications(publisher, title, author, yearPublished, monthPublished, dayPublished));
     }
-
+    
     /**
-     * Add stand alone book list to publicationList
+     * adds periodicals without genre to publications list
      */
-    //Vet du hvordan vi kan ta inn hvilken som helst 
-    // liste her for å så legge dem inn i publicationsList??
-    //Det vil hjelpe på med generalisering tenker jeg.
-    public void addBookListToPublications()
+    public void addPeriodicalPublication2(String publisher, String title, int issueNr, int yearPublished,int monthPublished,int dayPublished)
     {
-        for (int i = 0; i < StandAloneBook.size(); i++)
-        {
-            listOfPublications.add(StandAloneBook.get(i));
-        }
+        listOfPublications.add(new Publications(publisher, title, issueNr, yearPublished,monthPublished,dayPublished));
     }
-
+    
     /**
-     * Add book series list to publications list
-     * Really a dublicate of addBookListToPublications()
+     * adds periodicals to publications list
      */
-    public void addBookListToPublications2()
+    public void addPeriodicalPublication(String publisher, String title, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
     {
-        for (int i = 0; i < SeriesBooks.size(); i++)
-        {
-            listOfPublications.add(SeriesBooks.get(i));
-        }
+        listOfPublications.add(new Publications(publisher, title, issueNr, genre,yearPublished,monthPublished,dayPublished));
     }
-
+    
     /**
-     * Lists and prints all elements in StandAloneBook list
+     * Lists and prints all elements in SeriesBooks list
+     * Duplicate this for other as well.
+     * just change instanceof **
      */
-    public void listAllStandAloneBooks()
-    {
-        if(isEmpty())
-        {
-            System.out.println("Sorry, there are no stand-alone books available");
-        }
-        else
-        {
-            for(int index = 0; index < StandAloneBook.size(); index++)
-            {
-                Publications rm = StandAloneBook.get(index);
-                System.out.println(rm.summaryAsString());
-            }
-        }
-    }
-
-    /**
-     * Lists and prints all elements in SeriesBooks list 
-     */
-    public Iterator<Publications> isAGivenPublication(String type)
+    public Iterator<Publications> isAGivenPublication()
     {
         ArrayList<Publications>  wantedPublications = new ArrayList<>();
 
         for(Publications p : this.listOfPublications)
         {
-            if (p.getType().equals(type))
+            if (p instanceof Series_Book)
             {
                 wantedPublications.add(p);
             }
         }
 
         return wantedPublications.iterator();
-        // if(isEmpty())
-        // {
-            // System.out.println("Sorry, there are no book series available");
-        // }
-        // else
-        // {
-            // for (int i = 0; i < SeriesBooks.size(); i++)
-            // {
-                // Publications rm = SeriesBooks.get(i);
-                // System.out.println(rm.summaryAsString());
-            // }
-        // }
     }
 
     /**
@@ -178,16 +73,6 @@ public class Register
     public void addPublicationsTest2(String title)
     {
         listOfPublications.add(new Publications (title));
-    }
-
-    /**
-     * Let user add publication to publicationlist
-     */
-    public void addPublications(String title, String author, int yearPublished, 
-    int monthPublished,int dayPublished)
-    {
-        listOfPublications.add(new Publications (title,author,yearPublished,
-                monthPublished, dayPublished));
     }
 
     /**
@@ -255,48 +140,12 @@ public class Register
             {
                 Publications p = foundPublicationIt.next();
                 System.out.println("Found:\n" + p.summaryAsString());
-                // + "Title: "
-                // + p.getTitle() 
-                // + ", Author: "
-                // + p.getAuthor()
-                // + ", Published by: "
-                // + p.getPublisher());
             }
         }
         else
         {
             System.out.println("Could not find any publications named'" 
                 + title + "' in publication list");
-        }
-    }
-
-    /**
-     * Prints all publication found with same title. "Finn meg"
-     * Prints title and publisher.
-     */
-    public void findAllPublicationFinnMeg()
-    {
-        Iterator<Publications> foundPublicationIt = 
-            findAllPublicationsByTitle("Finn meg");
-        //Print all found persons
-        if (foundPublicationIt.hasNext())
-        {
-            while (foundPublicationIt.hasNext())
-            {
-                Publications p = foundPublicationIt.next();
-                System.out.println("Found:\n" + p.summaryAsString());
-                // + "Title: "
-                // + p.getTitle() 
-                // + ", Author: "
-                // + p.getAuthor()
-                // + ", published by:"
-                // + p.getPublisher());
-            }
-        }
-        else
-        {
-            System.out.println("Could not find any publications named'" 
-                + "Finn meg" + "' in publication list");
         }
     }
 

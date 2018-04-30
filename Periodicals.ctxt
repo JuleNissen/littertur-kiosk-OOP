@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Periodicals
+comment0.text=\r\n\ Models\ a\ super\ class\ for\ periodical\ publications.\r\n\ ie\ something\ that\ is\ published\ periodically\ and\ has\ an\ issue\ number.\r\n\r\n\ @author\ Alejandro\ M\ T\ Gr\u00F8nhaug\r\n\ @version\ 22.04.2018\ (dd.mm.yyyy)\r\n
+comment1.params=title\ publisher
+comment1.target=Periodicals(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Periodicals\r\n
+comment2.params=issueNr
+comment2.target=void\ setIssueNr(int)
+comment2.text=\r\n\ Set\ issueNR\r\n\ @param\ issueNr,\ Issue\ number\ of\ this\ article\r\n
+comment3.params=
+comment3.target=int\ getIssueNr()
+comment4.params=genre
+comment4.target=void\ setGenre(java.lang.String)
+comment4.text=\r\n\ Set\ Genre\r\n\ @param\ genre,\ Genre\ of\ this\ article\r\n
+comment5.params=
+comment5.target=java.lang.String\ getGenre()
+comment5.text=\r\n\ @return\ genre,\ Genre\ of\ this\ article\r\n
+numComments=6
