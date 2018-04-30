@@ -2,8 +2,13 @@
 dependency1.from=PublicationsTest
 dependency1.to=Publications
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency10.from=Register
 dependency10.to=Comics
+=======
+dependency10.from=Main
+dependency10.to=ApplicationUI
+>>>>>>> parent of e8764e0... Fixed tests
 dependency10.type=UsesDependency
 dependency11.from=Register
 dependency11.to=Magazine
@@ -14,6 +19,7 @@ dependency12.type=UsesDependency
 dependency2.from=ApplicationUI
 dependency2.to=Register
 dependency2.type=UsesDependency
+<<<<<<< HEAD
 dependency3.from=ApplicationUI
 dependency3.to=Publications
 dependency3.type=UsesDependency
@@ -22,11 +28,22 @@ dependency4.to=Newspaper
 dependency4.type=UsesDependency
 dependency5.from=RegisterTest
 dependency5.to=Register
+=======
+dependency3.from=PublicationsTest
+dependency3.to=Publications
+dependency3.type=UsesDependency
+dependency4.from=Register
+dependency4.to=Single_Book
+dependency4.type=UsesDependency
+dependency5.from=Register
+dependency5.to=Series_Book
+>>>>>>> parent of e8764e0... Fixed tests
 dependency5.type=UsesDependency
 dependency6.from=Register
 dependency6.to=Publications
 dependency6.type=UsesDependency
 dependency7.from=Register
+<<<<<<< HEAD
 dependency7.to=Single_Book
 dependency7.type=UsesDependency
 dependency8.from=Register
@@ -50,6 +67,31 @@ package.editor.y=100
 package.frame.height=1048
 package.frame.width=976
 package.numDependencies=12
+=======
+dependency7.to=Newspaper
+dependency7.type=UsesDependency
+dependency8.from=Register
+dependency8.to=Comics
+dependency8.type=UsesDependency
+dependency9.from=Register
+dependency9.to=Magazine
+dependency9.type=UsesDependency
+editor.fx.0.height=1047
+editor.fx.0.width=974
+editor.fx.0.x=-32000
+editor.fx.0.y=-32000
+objectbench.height=111
+objectbench.width=561
+package.divider.horizontal=0.5997888067581837
+package.divider.vertical=0.8161993769470405
+package.editor.height=517
+package.editor.width=837
+package.editor.x=-32000
+package.editor.y=-32000
+package.frame.height=761
+package.frame.width=985
+package.numDependencies=10
+>>>>>>> parent of e8764e0... Fixed tests
 package.numTargets=13
 package.showExtends=true
 package.showUses=true

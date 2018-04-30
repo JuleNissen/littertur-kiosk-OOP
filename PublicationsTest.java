@@ -1,3 +1,5 @@
+
+
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -41,9 +43,9 @@ public class PublicationsTest
     @Test
     public void testSetAndGetPublisher()
     {
-        Publications publicat2 = new Publications("Publisher Test");
-        publicat2.setPublisher("Publisher Test");
-        assertEquals("Publisher Test", publicat2.getPublisher());
+        Publications publicat2 = new Publications("publisher Test");
+        publicat2.setPublisher("publisher Test");
+        assertEquals("publisher Test", publicat2.getPublisher());
     }
 
     @Test
@@ -51,7 +53,7 @@ public class PublicationsTest
     {
         Publications publicat1 = new Publications("testing Constructor");
         assertEquals("N/P", publicat1.getPublisher());
-        assertEquals("testing Constructor: N/A: N/P - 0/0/0", publicat1.summaryAsString());
+        assertEquals("testing Constructor:N/P - 0/0/0", publicat1.summaryAsString());
     }
 
     @Test
@@ -59,7 +61,7 @@ public class PublicationsTest
     {
         Publications publicat2 = new Publications("fo");
         publicat2.setDate(1992, 4, 20);
-        assertEquals("fo: N/A: N/P - 1992/4/20", publicat2.summaryAsString());
+        assertEquals("fo:N/P - 1992/4/20", publicat2.summaryAsString());
     }
 }
 
