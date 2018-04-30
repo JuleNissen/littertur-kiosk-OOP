@@ -1,2 +1,2 @@
-git config --global core.excludesfile ~/.gitignore_global *.ctxt *.class doc/
-doc
+ git config --global core.excludesfile ~/.gitignore_global *.ctxt *.class doc/
++doc
