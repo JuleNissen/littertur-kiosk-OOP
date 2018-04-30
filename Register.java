@@ -46,7 +46,15 @@ public class Register
     {
         listOfPublications.add(new Publications(publisher, title, issueNr, genre,yearPublished,monthPublished,dayPublished));
     }
-    
+
+    /**
+     * Test for adding publication using a user defined String
+     */
+    public void addPublicationsTest2(String title)
+    {
+        listOfPublications.add(new Publications (title));
+    }
+
     /**
      * Lists and prints all elements in SeriesBooks list
      * Duplicate this for other as well.
@@ -66,15 +74,7 @@ public class Register
 
         return wantedPublications.iterator();
     }
-
-    /**
-     * Test for adding publication using a user defined String
-     */
-    public void addPublicationsTest2(String title)
-    {
-        listOfPublications.add(new Publications (title));
-    }
-
+    
     /**
      * List all publications in the registrer
      */

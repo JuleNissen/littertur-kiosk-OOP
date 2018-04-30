@@ -224,6 +224,7 @@ public class ApplicationUI
         }
         return PublicationMenu;
     }
+    
     /**
      * Add your own newspaper
      * You will be guided trough the process of adding your own newspaper.
@@ -350,4 +351,25 @@ register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublishe
         register.addPeriodicalPublication("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
         register.addPeriodicalPublication("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
     }
+    
+     // /**
+     // * Lists and prints all elements in SeriesBooks list
+     // * Duplicate this for other as well.
+     // * just change instanceof **
+     // */
+    // public Iterator<Publications> isAGivenPublication()
+    // {
+        // register.getIterator();
+        // ArrayList<Publications>  wantedPublications = new ArrayList<>();
+
+        // for(Publications p : register.getIterator())
+        // {
+            // if (p instanceof Series_Book)
+            // {
+                // wantedPublications.add(p);
+            // }
+        // }
+
+        // return wantedPublications.iterator();
+    // }
 }
