@@ -11,8 +11,8 @@ import java.util.Scanner;
  */
 public class Register
 {
-    // private ArrayList<Single_Book> StandAloneBook;
-    // private ArrayList<Series_Book> SeriesBooks;
+    private ArrayList<Single_Book> StandAloneBook;
+    private ArrayList<Series_Book> SeriesBooks;
     private ArrayList<Publications>  listOfPublications;
 
     Scanner Input = new Scanner(System.in);
@@ -142,32 +142,34 @@ public class Register
         }
     }
 
-    // public void printDetails()
-    // {
-    // if (type().equals("Newspaper"))
-    // {
-    // Newspaper.newspaperDetails();
-    // }
-
-    // }
-
     /**
      * Lists and prints all elements in SeriesBooks list 
      */
-    public void listAllSeriesBooks()
+    public Iterator<Publications> isAGivenPublication(String type)
     {
-        if(isEmpty())
+        ArrayList<Publications>  wantedPublications = new ArrayList<>();
+
+        for(Publications p : this.listOfPublications)
         {
-            System.out.println("Sorry, there are no book series available");
-        }
-        else
-        {
-            for (int i = 0; i < SeriesBooks.size(); i++)
+            if (p.getType().equals(type))
             {
-                Publications rm = SeriesBooks.get(i);
-                System.out.println(rm.summaryAsString());
+                wantedPublications.add(p);
             }
         }
+
+        return wantedPublications.iterator();
+        // if(isEmpty())
+        // {
+            // System.out.println("Sorry, there are no book series available");
+        // }
+        // else
+        // {
+            // for (int i = 0; i < SeriesBooks.size(); i++)
+            // {
+                // Publications rm = SeriesBooks.get(i);
+                // System.out.println(rm.summaryAsString());
+            // }
+        // }
     }
 
     /**

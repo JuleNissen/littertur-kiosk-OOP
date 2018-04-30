@@ -25,6 +25,11 @@ public class Series_Book extends Books
         
     }
     
+    public String getType()
+    {
+        return this.type;
+    }
+    
     public void SeriesBookDetails()
     {
         System.out.println("Book: "+type);

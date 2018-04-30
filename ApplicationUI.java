@@ -88,7 +88,7 @@ public class ApplicationUI
                     break;                      // utgivningene. skal vi gjøre det på denne måten?
 
                     case 7:
-                    register.listAllSeriesBooks();
+                    register.isAGivenPublication("SeriesBook");
                     break;
 
                     case 8:
@@ -148,18 +148,6 @@ public class ApplicationUI
         }
         return menuSelection;
     }
-
-    // ------ The methods below this line are "helper"-methods, used from the menu ----
-    // ------ All these methods are made privat, since they are only used by the menu ---
-
-    // /**
-    // * Initializes the application.
-    // * Typically you would create the LiteratureRegistrer-instance here
-    // */
-    // private void init()
-    // {
-    // System.out.println("init() was called");
-    // }
 
     /**
      * Made new menu to show user when *he wants to add more publications themselves
