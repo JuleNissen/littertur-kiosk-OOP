@@ -49,10 +49,10 @@ public class RegisterTest
     }
 
     @Test
-    public void testAddFillersToList()
+    public void testAdd()
     {
         Register register1 = new Register();
-        register1.addPublicationsPosiTest();
+        register1.addPublicationsTest2("add");
         register1.listAllPublications();
         assertEquals(false, register1.isEmpty());
     }

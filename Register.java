@@ -1,15 +1,19 @@
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 /**
  * Models a digital register for various kinds of Publications
  *
  * @author Alejandro Grønhaug, Jahn-Willy
- * @version 2018-02-09
+ * @version 16.4.2018 (dd.mm.yyyy)
  */
 public class Register
 {
-    private ArrayList<Publications>  listOfPublications;
+    public ArrayList<Publications>  listOfPublications;
+
+    Scanner Input = new Scanner(System.in);
 
     /**
      * Constructor for objects of class Register
@@ -18,16 +22,30 @@ public class Register
     {
         this.listOfPublications = new ArrayList<Publications>();
     }
-
+    
+    
     /**
-     * Positive test for adding a publication to the list
+     * adds a new book to publication list
      */
-    public void addPublicationsPosiTest()
+    public void addBookPublication(String publisher, String title, String author, int yearPublished,int monthPublished,int dayPublished)
     {
-        listOfPublications.add(new Publications ("Vitenskap", "Jens Jensen", 2017, 03, 10));
-        listOfPublications.add(new Publications ("Ikke-vitenskap", "Inga Flesk", 2013, 05, 04));
-        listOfPublications.add(new Publications ("Selskap", "Solomon Grundy", 2015, 05, 10));
-        listOfPublications.add(new Publications ("Finn meg", "FN 2187", 2015, 12, 16));
+        listOfPublications.add(new Publications(publisher, title, author, yearPublished, monthPublished, dayPublished));
+    }
+    
+    /**
+     * adds periodicals without genre to publications list
+     */
+    public void addPeriodicalPublication2(String publisher, String title, int issueNr, int yearPublished,int monthPublished,int dayPublished)
+    {
+        listOfPublications.add(new Publications(publisher, title, issueNr, yearPublished,monthPublished,dayPublished));
+    }
+    
+    /**
+     * adds periodicals to publications list
+     */
+    public void addPeriodicalPublication(String publisher, String title, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
+    {
+        listOfPublications.add(new Publications(publisher, title, issueNr, genre,yearPublished,monthPublished,dayPublished));
     }
 
     /**
@@ -37,17 +55,32 @@ public class Register
     {
         listOfPublications.add(new Publications (title));
     }
-
-    /**
-     * Let user add publication to publicationlist
-     */
-    public void addPublications(String title, String author, int yearPublished, 
-    int monthPublished,int dayPublished)
+    
+    public void addLists(Publications list)
     {
-        listOfPublications.add(new Publications (title,author,yearPublished,
-        monthPublished, dayPublished));
+        listOfPublications.add(list);
     }
+    
+    /**
+     * Lists and prints all elements in SeriesBooks list
+     * Duplicate this for other as well.
+     * just change instanceof ** Jobb med denne!!
+     */
+    public Iterator<Publications> isAGivenPublication()
+    {
+        ArrayList<Publications>  wantedPublications = new ArrayList<>();
 
+        for(Publications p : this.listOfPublications)
+        {
+            if (p instanceof Series_Book)
+            {
+                wantedPublications.add(p);
+            }
+        }
+
+        return wantedPublications.iterator();
+    }
+    
     /**
      * List all publications in the registrer
      */
@@ -86,7 +119,27 @@ public class Register
 
         return foundPublication.iterator();
     }
+    
+    /**
+     * Search for publications by publisher using Iterator
+     * @param publisher, the publisher of the publication you wish to search for
+     * @return publication(s) found with matching title 
+     */
+    public Iterator<Publications> findAllPublicationsByPubl(String publisher)
+    {
+        ArrayList<Publications>  foundPublication = new ArrayList<Publications>();
 
+        for(Publications p : this.listOfPublications)
+        {
+            if (p.getPublisher().equals(publisher))
+            {
+                foundPublication.add(p);
+            }
+        }
+
+        return foundPublication.iterator();
+    }
+    
     /**
      * Returns an iterator to the collection of Publications in the register.
      * Makes it possible for other objects to iterate over all the Publications in register.
@@ -97,63 +150,54 @@ public class Register
         return this.listOfPublications.iterator();
     }
 
-        
     /**
      * Prints all publication found with same title.
-     * Prints title and authors.
+     * Prints title and publisher.
      */
     public void printAllPublicationsWithTitle(String title)
     {
         Iterator<Publications> foundPublicationIt = 
-        findAllPublicationsByTitle(title);
-        //Print all found persons
+            findAllPublicationsByTitle(title);
+        //Print all found titles
         if (foundPublicationIt.hasNext())
         {
             while (foundPublicationIt.hasNext())
             {
                 Publications p = foundPublicationIt.next();
-                System.out.println("Found:\n"
-                    + "Title: "
-                    + p.getTitle() 
-                    + ", Auhor: "
-                    + p.getAuthor());
+                System.out.println("Found:\n" + p.summaryAsString());
             }
         }
         else
         {
             System.out.println("Could not find any publications named'" 
-            + title + "' in publication list");
-        }
-    }
-    
-    /**
-     * Prints all publication found with same title. "Finn meg"
-     * Prints title and authors.
-     */
-    public void findAllPublicationFinnMeg()
-    {
-        Iterator<Publications> foundPublicationIt = 
-            findAllPublicationsByTitle("Finn meg");
-        //Print all found persons
-        if (foundPublicationIt.hasNext())
-        {
-            while (foundPublicationIt.hasNext())
-            {
-                Publications p = foundPublicationIt.next();
-                System.out.println("Found:\n"
-                    + "Title: "
-                    + p.getTitle() 
-                    + ", Auhor: "
-                    + p.getAuthor());
-            }
-        }
-        else
-        {
-            System.out.println("Could not find any publications named'" 
-                + "Finn meg" + "' in publication list");
+                + title + "' in publication list");
         }
     }
 
+    /**
+     * Prints all publication found with same publisher.
+     * Prints title and publisher.
+     */
+    public void printAllPublicationsFromPublisher(String publisher)
+    {
+        Iterator<Publications> foundPublicationIt = 
+            findAllPublicationsByPubl(publisher);
+        //Print all found titles
+        if (foundPublicationIt.hasNext())
+        {
+            while (foundPublicationIt.hasNext())
+            {
+                Publications p = foundPublicationIt.next();
+                System.out.println("Found:\n" + p.summaryAsString());
+            }
+        }
+        else
+        {
+            System.out.println("Could not find any publications from publisher' " 
+                +publisher + "' in publication list");
+        }
+    }
+    
     /**
      * Searches for publications by title
      * @return string to search for title
@@ -193,6 +237,20 @@ public class Register
         }
         return delete;
     }
+
+    // /**
+     // * Search and print publication given by user.
+     // * If method does not find publication with same name will print
+     // * "Could not find any Finn meg in publication list"
+     // */
+    // public void findPublicationUserDefined()
+    // {
+        // System.out.println("Please enter title to search for");
+        // Scanner reader = new Scanner(System.in);
+        // String title = Input.nextLine();
+
+        // printAllPublicationsWithTitle(title);
+    // }
 
     /**
      * Return 'true' if the publication list is rempty
