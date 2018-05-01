@@ -175,11 +175,11 @@ public class ApplicationUI
                     break;
 
                     case 4:
-                    System.out.println("WIP"); //comics
+                    addComics(); //comics
                     break;
 
                     case 5:
-                    System.out.println("WIP"); //magazine
+                    addMagazine(); //magazine
                     break;
 
                     case 6:
@@ -296,6 +296,155 @@ public class ApplicationUI
         addNewProduct();
     }
 
+    public void addComics()
+    {
+        Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' i stedet for reader.
+        int stage = 1;
+        String title = null;
+        String publisher = null;
+        int issueNr = 0;
+        String genre = null;
+        int yearPublished = 0;
+        int monthPublished = 0;
+        int dayPublished = 0;
+        
+        while (stage == 1)
+        {
+            System.out.println("Enter the title:");
+            title = reader.nextLine();
+            stage = 2;
+        }
+        
+        while (stage == 2)
+        {
+            System.out.println("Enter the publisher");
+            publisher = reader.nextLine();
+            stage = 3;
+        }
+        
+        while (stage == 3)
+        {
+            System.out.println("Enter the issue number");
+            issueNr = reader.nextInt();
+            stage = 4;
+        }
+        
+        while (stage == 4)
+        {
+            System.out.println("Enter the genre:");
+            genre = reader.nextLine();
+            stage = 5;
+        }
+        
+        while (stage == 5)
+        {
+            System.out.println("Enter the published year");
+            yearPublished = reader.nextInt();
+            stage = 6;
+        }
+        
+        while (stage == 6)
+        {
+            System.out.println("Enter the published month (1-12)");
+            monthPublished = reader.nextInt();
+            stage = 7;
+        }
+        
+        while(stage == 7)
+        {
+            System.out.println("Enter the day published(1-31)");
+            dayPublished = reader.nextInt();
+            stage = 8;
+        }
+        
+        while(stage == 8)
+        {
+            System.out.println("Your comic is being added...");
+            Publications publication = new Comics(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
+            
+            
+            addComics(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
+            System.out.println("Comic added!");
+            break;
+        }
+        showMenu();
+    }
+    
+    public void addMagazine()
+    {
+        Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' i stedet for reader.
+        int stage = 1;
+        String title = null;
+        String publisher = null;
+        int issueNr = 0;
+        String genre = null;
+        int yearPublished = 0;
+        int monthPublished = 0;
+        int dayPublished = 0;
+        
+        while (stage == 1)
+        {
+            System.out.println("Enter the title:");
+            title = reader.nextLine();
+            stage = 2;
+        }
+        
+        while (stage == 2)
+        {
+            System.out.println("Enter the publisher");
+            publisher = reader.nextLine();
+            stage = 3;
+        }
+        
+        while (stage == 3)
+        {
+            System.out.println("Enter the issue number");
+            issueNr = reader.nextInt();
+            stage = 4;
+        }
+        
+        while (stage == 4)
+        {
+            System.out.println("Enter the genre:");
+            genre = reader.nextLine();
+            stage = 5;
+        }
+        
+        while (stage == 5)
+        {
+            System.out.println("Enter the published year");
+            yearPublished = reader.nextInt();
+            stage = 6;
+        }
+        
+        while (stage == 6)
+        {
+            System.out.println("Enter the published month (1-12)");
+            monthPublished = reader.nextInt();
+            stage = 7;
+        }
+        
+        while(stage == 7)
+        {
+            System.out.println("Enter the day published(1-31)");
+            dayPublished = reader.nextInt();
+            stage = 8;
+        }
+        
+        while(stage == 8)
+        {
+            System.out.println("Your magazine is being added...");
+            Publications publication = new Comics(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
+            
+            
+            addMagazine(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
+            System.out.println("Comic added!");
+            break;
+        }
+        showMenu();
+    }
+    
+    
     /**
      * Find and display a product based om name (title).
      * As with the addNewProduct()-method, you have to
