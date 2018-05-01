@@ -23,8 +23,9 @@ public class ApplicationUI
             "1. Fill publication list",
             "2. List all publications",
             "3. Add a publication",
-            "4. Search for publication",
-            "5. List a type of publication"
+            "4. Search for publication by title",
+            "5. Search for publication by publisher",
+            "6. List a type of publication"
 
         };
 
@@ -74,14 +75,18 @@ public class ApplicationUI
                     break;
 
                     case 4:
-                    register.findPublicationUserDefined();
+                    findPublicationUserDefTitle();
                     break;
-
+                    
                     case 5:
-                    register.isAGivenPublication();
+                    findPublicationUserDefPubl();
                     break;
 
                     case 6:
+                    register.isAGivenPublication();
+                    break;
+
+                    case 7:
                     System.out.println("\nThank you for using Media stand v0.5. Bye!\n");
                     quit = true;
                     break;
@@ -296,8 +301,28 @@ public class ApplicationUI
         addNewProduct();
     }
 
+    public void findPublicationUserDefTitle()
+    {
+        System.out.println("Please enter title to search for");
+        Scanner reader = new Scanner(System.in);
+        String title = Input.nextLine();
+
+        register.printAllPublicationsWithTitle(title);
+    }    
+    
+    public void findPublicationUserDefPubl()
+    {
+        System.out.println("Please enter name of publisher to search for");
+        Scanner reader = new Scanner(System.in);
+        String publisher = Input.nextLine();
+
+        register.printAllPublicationsFromPublisher(publisher);
+    } 
+    
+    
     public void addComics()
     {
+       
         Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' i stedet for reader.
         int stage = 1;
         String title = null;
@@ -491,18 +516,29 @@ public class ApplicationUI
     public void fillWithDummyData()
     {
         //register.addBookPublication("title", "publisher", "author", 2006, 12, 31);
-        register.addBookPublication("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16); //fjerner denne når add metodene er lagt inn
-        Publications Single_publication = new Single_Book("title", "publisher", "author", 2006, 12, 31);
-
-        register.addBookPublication("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
-        Publications Series_publication = new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
+        // register.addBookPublication("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16); //fjerner denne når add metodene er lagt inn
         //addSeriesBook(title, publisher, author, yearPublished, monthPublished, dayPublished);
+        // register.addBookPublication("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
+        // register.addPeriodicalPublication2("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
+        // register.addPeriodicalPublication("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
+        // register.addPeriodicalPublication("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
+        
+        Publications Single_publication = new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16);
+        register.addLists(Single_publication);
 
-        register.addPeriodicalPublication2("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
-        Publications Newspaper = new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
+        Publications Series_publication = new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
+        register.addLists(Series_publication);
 
-        register.addPeriodicalPublication("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
-        register.addPeriodicalPublication("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
+        Publications Newspapers = new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
+        register.addLists(Newspapers);
+        
+        Publications Comic = new Comics("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
+        register.addLists(Comic);
+        
+        Publications Mag = new Magazine("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
+        register.addLists(Mag);
+        
+
     }
 
     // /**

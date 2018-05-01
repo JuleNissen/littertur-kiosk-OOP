@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class Register
 {
-    private ArrayList<Publications>  listOfPublications;
+    public ArrayList<Publications>  listOfPublications;
 
     Scanner Input = new Scanner(System.in);
 
@@ -22,6 +22,7 @@ public class Register
     {
         this.listOfPublications = new ArrayList<Publications>();
     }
+    
     
     /**
      * adds a new book to publication list
@@ -54,7 +55,12 @@ public class Register
     {
         listOfPublications.add(new Publications (title));
     }
-
+    
+    public void addLists(Publications list)
+    {
+        listOfPublications.add(list);
+    }
+    
     /**
      * Lists and prints all elements in SeriesBooks list
      * Duplicate this for other as well.
@@ -113,7 +119,27 @@ public class Register
 
         return foundPublication.iterator();
     }
+    
+    /**
+     * Search for publications by publisher using Iterator
+     * @param publisher, the publisher of the publication you wish to search for
+     * @return publication(s) found with matching title 
+     */
+    public Iterator<Publications> findAllPublicationsByPubl(String publisher)
+    {
+        ArrayList<Publications>  foundPublication = new ArrayList<Publications>();
 
+        for(Publications p : this.listOfPublications)
+        {
+            if (p.getPublisher().equals(publisher))
+            {
+                foundPublication.add(p);
+            }
+        }
+
+        return foundPublication.iterator();
+    }
+    
     /**
      * Returns an iterator to the collection of Publications in the register.
      * Makes it possible for other objects to iterate over all the Publications in register.
@@ -148,6 +174,30 @@ public class Register
         }
     }
 
+    /**
+     * Prints all publication found with same publisher.
+     * Prints title and publisher.
+     */
+    public void printAllPublicationsFromPublisher(String publisher)
+    {
+        Iterator<Publications> foundPublicationIt = 
+            findAllPublicationsByPubl(publisher);
+        //Print all found titles
+        if (foundPublicationIt.hasNext())
+        {
+            while (foundPublicationIt.hasNext())
+            {
+                Publications p = foundPublicationIt.next();
+                System.out.println("Found:\n" + p.summaryAsString());
+            }
+        }
+        else
+        {
+            System.out.println("Could not find any publications from publisher' " 
+                +publisher + "' in publication list");
+        }
+    }
+    
     /**
      * Searches for publications by title
      * @return string to search for title
@@ -188,19 +238,19 @@ public class Register
         return delete;
     }
 
-    /**
-     * Search and print publication given by user.
-     * If method does not find publication with same name will print
-     * "Could not find any Finn meg in publication list"
-     */
-    public void findPublicationUserDefined()
-    {
-        System.out.println("Please enter title to search for");
-        Scanner reader = new Scanner(System.in);
-        String title = Input.nextLine();
+    // /**
+     // * Search and print publication given by user.
+     // * If method does not find publication with same name will print
+     // * "Could not find any Finn meg in publication list"
+     // */
+    // public void findPublicationUserDefined()
+    // {
+        // System.out.println("Please enter title to search for");
+        // Scanner reader = new Scanner(System.in);
+        // String title = Input.nextLine();
 
-        printAllPublicationsWithTitle(title);
-    }
+        // printAllPublicationsWithTitle(title);
+    // }
 
     /**
      * Return 'true' if the publication list is rempty
