@@ -32,7 +32,7 @@ public class ApplicationUI
     private String[] publicationItems = 
         {
             "1. Add Standalone book",
-            "2. Add book series(filler)",
+            "2. Add book series",
             "3. Add newspaper",
             "4. Add Comics",
             "5. Add magazine"
@@ -77,7 +77,7 @@ public class ApplicationUI
                     case 4:
                     findPublicationUserDefTitle();
                     break;
-                    
+
                     case 5:
                     findPublicationUserDefPubl();
                     break;
@@ -166,29 +166,27 @@ public class ApplicationUI
                 switch (PublicationMenu) 
                 {
                     case 1:
-                    //Add standAlone book
-                    System.out.println("StandAlone Book list should have been filled now");
+                    addSingleBook();
                     break;
 
                     case 2:
-                    //Add book series
-                    System.out.println("Book serie should have been filled now");
+                    addBookSeries();
                     break;
 
                     case 3:
-                    addNewsPaper(); //newspaper, FERDIG!
+                    addNewsPaper();
                     break;
 
                     case 4:
-                    addComics(); //comics
+                    addComics();
                     break;
 
                     case 5:
-                    addMagazine(); //magazine
+                    addMagazine();
                     break;
 
                     case 6:
-                    System.out.println("\nDon't forget to check if your books have been added!\n");
+                    //System.out.println("\nDon't forget to check if your books have been added!\n");
                     quit = true;
                     break;
 
@@ -309,7 +307,7 @@ public class ApplicationUI
 
         register.printAllPublicationsWithTitle(title);
     }    
-    
+
     public void findPublicationUserDefPubl()
     {
         System.out.println("Please enter name of publisher to search for");
@@ -318,11 +316,10 @@ public class ApplicationUI
 
         register.printAllPublicationsFromPublisher(publisher);
     } 
-    
-    
+
     public void addComics()
     {
-       
+
         Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' i stedet for reader.
         int stage = 1;
         String title = null;
@@ -332,69 +329,68 @@ public class ApplicationUI
         int yearPublished = 0;
         int monthPublished = 0;
         int dayPublished = 0;
-        
+
         while (stage == 1)
         {
             System.out.println("Enter the title:");
             title = reader.nextLine();
             stage = 2;
         }
-        
+
         while (stage == 2)
         {
             System.out.println("Enter the publisher");
             publisher = reader.nextLine();
             stage = 3;
         }
-        
+
         while (stage == 3)
         {
             System.out.println("Enter the issue number");
             issueNr = reader.nextInt();
             stage = 4;
         }
-        
+
         while (stage == 4)
         {
             System.out.println("Enter the genre:");
             genre = reader.nextLine();
             stage = 5;
         }
-        
+
         while (stage == 5)
         {
             System.out.println("Enter the published year");
             yearPublished = reader.nextInt();
             stage = 6;
         }
-        
+
         while (stage == 6)
         {
             System.out.println("Enter the published month (1-12)");
             monthPublished = reader.nextInt();
             stage = 7;
         }
-        
+
         while(stage == 7)
         {
             System.out.println("Enter the day published(1-31)");
             dayPublished = reader.nextInt();
             stage = 8;
         }
-        
+
         while(stage == 8)
         {
             System.out.println("Your comic is being added...");
             Publications publication = new Comics(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
-            
-            
+
             addComics(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
             System.out.println("Comic added!");
             break;
         }
-        showMenu();
+        addNewProduct();
     }
-    
+
     public void addMagazine()
     {
         Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' i stedet for reader.
@@ -406,70 +402,210 @@ public class ApplicationUI
         int yearPublished = 0;
         int monthPublished = 0;
         int dayPublished = 0;
-        
+
         while (stage == 1)
         {
             System.out.println("Enter the title:");
             title = reader.nextLine();
             stage = 2;
         }
-        
+
         while (stage == 2)
         {
             System.out.println("Enter the publisher");
             publisher = reader.nextLine();
             stage = 3;
         }
-        
+
         while (stage == 3)
         {
             System.out.println("Enter the issue number");
             issueNr = reader.nextInt();
             stage = 4;
         }
-        
+
         while (stage == 4)
         {
             System.out.println("Enter the genre:");
             genre = reader.nextLine();
             stage = 5;
         }
-        
+
         while (stage == 5)
         {
             System.out.println("Enter the published year");
             yearPublished = reader.nextInt();
             stage = 6;
         }
-        
+
         while (stage == 6)
         {
             System.out.println("Enter the published month (1-12)");
             monthPublished = reader.nextInt();
             stage = 7;
         }
-        
+
         while(stage == 7)
         {
             System.out.println("Enter the day published(1-31)");
             dayPublished = reader.nextInt();
             stage = 8;
         }
-        
+
         while(stage == 8)
         {
             System.out.println("Your magazine is being added...");
             Publications publication = new Comics(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
-            
-            
+
             addMagazine(title, publisher, issueNr, genre, yearPublished, monthPublished, dayPublished);
             System.out.println("Comic added!");
             break;
         }
-        showMenu();
+        addNewProduct();
+    }
+
+    /**
+     * Add your own single book
+     * You will be guided trough the process of adding your own newspaper.
+     */
+    public void addSingleBook()
+    {
+        Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' istedefor reader.
+        int stage = 1;
+        //Felt som skal fylles ut. bedømm selv om alle skal fylles ut eller ikke. summaryAsString() i publications vil ordne resten om nødvendig.
+        String title = null;
+        String author = null;
+        String publisher = null;
+        //int issueNr = 0; kan legges til om nødvendig NOTE
+        int yearPublished = 0;
+        int monthPublished = 0;
+        int dayPublished = 0;
+
+        while (stage == 1)
+        {
+            System.out.println("Enter the title:");
+            title = reader.nextLine();
+            stage = 2;
+        }
+
+        while (stage == 2)
+        {
+            System.out.println("Enter the publisher");
+            publisher = reader.nextLine();
+            stage = 3;
+        }
+
+        while (stage == 3)
+        {
+            System.out.println("Enter the author");
+            author = reader.nextLine();
+            stage = 4;
+        }
+
+        while (stage == 4)
+        {
+            System.out.println("Enter the published year");
+            yearPublished = reader.nextInt();
+            stage = 5;
+        }
+
+        while (stage == 5)
+        {
+            System.out.println("Enter the published month (1-12)");
+            monthPublished = reader.nextInt();
+            stage = 6;
+        }
+
+        while(stage == 6)
+        {
+            System.out.println("Enter the day published(1-31)");
+            dayPublished = reader.nextInt();
+            stage = 7;
+        }
+
+        while(stage == 7)
+        {
+            System.out.println("Your book is being added...");
+            Publications publication = new Single_Book(title, publisher,author, yearPublished, monthPublished, dayPublished);
+
+            addStandAloneBook(title, publisher, author, yearPublished, monthPublished, dayPublished);
+            System.out.println("Book added!");
+            break;
+        }
+        addNewProduct();
     }
     
-    
+    /**
+     * Add your own book series
+     * You will be guided trough the process of adding your own newspaper.
+     */
+    public void addBookSeries()
+    {
+        Scanner reader = new Scanner(System.in); //kan fjernes om vi bruker 'Input' istedefor reader.
+        int stage = 1;
+        //Felt som skal fylles ut. bedømm selv om alle skal fylles ut eller ikke. summaryAsString() i publications vil ordne resten om nødvendig.
+        String title = null;
+        String author = null;
+        String publisher = null;
+        //int issueNr = 0; kan legges til om nødvendig NOTE
+        int yearPublished = 0;
+        int monthPublished = 0;
+        int dayPublished = 0;
+
+        while (stage == 1)
+        {
+            System.out.println("Enter the title:");
+            title = reader.nextLine();
+            stage = 2;
+        }
+
+        while (stage == 2)
+        {
+            System.out.println("Enter the publisher");
+            publisher = reader.nextLine();
+            stage = 3;
+        }
+
+        while (stage == 3)
+        {
+            System.out.println("Enter the author");
+            author = reader.nextLine();
+            stage = 4;
+        }
+
+        while (stage == 4)
+        {
+            System.out.println("Enter the published year");
+            yearPublished = reader.nextInt();
+            stage = 5;
+        }
+
+        while (stage == 5)
+        {
+            System.out.println("Enter the published month (1-12)");
+            monthPublished = reader.nextInt();
+            stage = 6;
+        }
+
+        while(stage == 6)
+        {
+            System.out.println("Enter the day published(1-31)");
+            dayPublished = reader.nextInt();
+            stage = 7;
+        }
+
+        while(stage == 7)
+        {
+            System.out.println("Your book is being added...");
+            Publications publication = new Single_Book(title, publisher,author, yearPublished, monthPublished, dayPublished);
+
+            addSeriesBook(title, publisher, author, yearPublished, monthPublished, dayPublished);
+            System.out.println("Book added!");
+            break;
+        }
+        addNewProduct();
+    }
+
     /**
      * Find and display a product based om name (title).
      * As with the addNewProduct()-method, you have to
@@ -485,14 +621,14 @@ public class ApplicationUI
         register.findAllPublicationsByTitle(""); //parameter må fikses før bruk
     }
 
-    public void addStandAloneBook(String publisher, String title, String author, int edition, int yearPublished,int monthPublished,int dayPublished)
+    public void addStandAloneBook(String title, String publisher, String author, int yearPublished,int monthPublished,int dayPublished)
     {
-        register.addBookPublication(publisher, title, author, yearPublished, monthPublished, dayPublished);
+        register.addBookPublication(title, publisher, author, yearPublished, monthPublished, dayPublished);
     }
 
-    public void addSeriesBook(String title, String publisher, String author, int edition, int yearPublished, int monthPublished, int dayPublished)
+    public void addSeriesBook(String title, String publisher, String author, int yearPublished, int monthPublished, int dayPublished)
     {
-        register.addBookPublication(publisher, title, author, yearPublished, monthPublished, dayPublished);
+        register.addBookPublication(title, publisher, author, yearPublished, monthPublished, dayPublished);
     }
 
     public void addNewspaper(String title, String publisher, int issueNr, int yearPublished,int monthPublished,int dayPublished)
@@ -522,7 +658,7 @@ public class ApplicationUI
         // register.addPeriodicalPublication2("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
         // register.addPeriodicalPublication("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
         // register.addPeriodicalPublication("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
-        
+
         Publications Single_publication = new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16);
         register.addLists(Single_publication);
 
@@ -531,16 +667,14 @@ public class ApplicationUI
 
         Publications Newspapers = new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
         register.addLists(Newspapers);
-        
+
         Publications Comic = new Comics("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
         register.addLists(Comic);
-        
+
         Publications Mag = new Magazine("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
         register.addLists(Mag);
-        
 
     }
-
     // /**
     // * Lists and prints all elements in SeriesBooks list
     // * Duplicate this for other as well.
