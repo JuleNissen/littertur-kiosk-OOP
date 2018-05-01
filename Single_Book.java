@@ -20,7 +20,7 @@ public class Single_Book extends Books
      * Calls setAuthor in super-class to add author.
      * Set isInSeries to 'false', this is a singel book.
      */
-    public Single_Book(String title, String publisher, String author, int edition, 
+    public Single_Book(String title, String publisher, String author, 
     int yearPublished, int monthPublished, int dayPublished)
     {
         super(title, author, publisher);

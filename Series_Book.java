@@ -17,7 +17,7 @@ public class Series_Book extends Books
      * Call inSeries in super-class to make it true.
      * Calls setAuthor in super-class to add author.
      */
-    public Series_Book(String title, String publisher, String author, int edition, 
+    public Series_Book(String title, String publisher, String author, 
     int yearPublished, int monthPublished, int dayPublished)
     {
         super(title, author, publisher);

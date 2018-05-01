@@ -58,7 +58,7 @@ public class Register
     /**
      * Lists and prints all elements in SeriesBooks list
      * Duplicate this for other as well.
-     * just change instanceof **
+     * just change instanceof ** Jobb med denne!!
      */
     public Iterator<Publications> isAGivenPublication()
     {
@@ -96,7 +96,6 @@ public class Register
 
     /**
      * Search for publications by title using Iterator
-     * String stops if space is found... needs fix.
      * @param title, the tile of publication you wish to search for
      * @return publication(s) found with matching title 
      */
@@ -133,7 +132,7 @@ public class Register
     {
         Iterator<Publications> foundPublicationIt = 
             findAllPublicationsByTitle(title);
-        //Print all found persons
+        //Print all found titles
         if (foundPublicationIt.hasNext())
         {
             while (foundPublicationIt.hasNext())

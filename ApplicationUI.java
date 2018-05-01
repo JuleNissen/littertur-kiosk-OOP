@@ -224,7 +224,7 @@ public class ApplicationUI
         }
         return PublicationMenu;
     }
-    
+
     /**
      * Add your own newspaper
      * You will be guided trough the process of adding your own newspaper.
@@ -241,61 +241,61 @@ public class ApplicationUI
         int yearPublished = 0;
         int monthPublished = 0;
         int dayPublished = 0;
-        
+
         while (stage == 1)
         {
             System.out.println("Enter the title:");
             title = reader.nextLine();
             stage = 2;
         }
-        
+
         while (stage == 2)
         {
             System.out.println("Enter the publisher");
             publisher = reader.nextLine();
             stage = 3;
         }
-        
+
         while (stage == 3)
         {
             System.out.println("Enter the issue number");
             issueNr = reader.nextInt();
             stage = 4;
         }
-        
+
         while (stage == 4)
         {
             System.out.println("Enter the published year");
             yearPublished = reader.nextInt();
             stage = 5;
         }
-        
+
         while (stage == 5)
         {
             System.out.println("Enter the published month (1-12)");
             monthPublished = reader.nextInt();
             stage = 6;
         }
-        
+
         while(stage == 6)
         {
             System.out.println("Enter the day published(1-31)");
             dayPublished = reader.nextInt();
             stage = 7;
         }
-        
+
         while(stage == 7)
         {
             System.out.println("Your newspaper is being added...");
             Publications publication = new Newspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
-            
+
             addNewspaper(title, publisher, issueNr, yearPublished, monthPublished, dayPublished);
             System.out.println("Newspaper added!");
             break;
         }
-        showMenu();
+        addNewProduct();
     }
-    
+
     /**
      * Find and display a product based om name (title).
      * As with the addNewProduct()-method, you have to
@@ -310,7 +310,7 @@ public class ApplicationUI
         System.out.println("Find publication with ");
         register.findAllPublicationsByTitle(""); //parameter må fikses før bruk
     }
-    
+
     public void addStandAloneBook(String publisher, String title, String author, int edition, int yearPublished,int monthPublished,int dayPublished)
     {
         register.addBookPublication(publisher, title, author, yearPublished, monthPublished, dayPublished);
@@ -323,53 +323,57 @@ public class ApplicationUI
 
     public void addNewspaper(String title, String publisher, int issueNr, int yearPublished,int monthPublished,int dayPublished)
     {
-register.addPeriodicalPublication2(publisher, title, issueNr, yearPublished, monthPublished, dayPublished);
+        register.addPeriodicalPublication2(publisher, title, issueNr, yearPublished, monthPublished, dayPublished);
     }
 
     public void addComics(String title, String publisher, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
     {
-register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublished, monthPublished, dayPublished);
+        register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublished, monthPublished, dayPublished);
     }
 
     public void addMagazine(String title, String publisher, int issueNr, String genre, int yearPublished,int monthPublished,int dayPublished)
     {
-register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublished, monthPublished, dayPublished);
+        register.addPeriodicalPublication(publisher, title, issueNr, genre, yearPublished, monthPublished, dayPublished);
     } 
-    
+
     /**
      * Fills the list with dummy data
      */    
     public void fillWithDummyData()
     {
-        register.addBookPublication("title", "publisher", "author", 2006, 12, 31);
-        register.addBookPublication("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16);
-        
+        //register.addBookPublication("title", "publisher", "author", 2006, 12, 31);
+        register.addBookPublication("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16); //fjerner denne når add metodene er lagt inn
+        Publications Single_publication = new Single_Book("title", "publisher", "author", 2006, 12, 31);
+
         register.addBookPublication("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
-        
-        register.addPeriodicalPublication2("Dagbladet", "Aller Media AS", 25, 2010, 10, 29); 
-        
+        Publications Series_publication = new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
+        //addSeriesBook(title, publisher, author, yearPublished, monthPublished, dayPublished);
+
+        register.addPeriodicalPublication2("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
+        Publications Newspaper = new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
+
         register.addPeriodicalPublication("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
         register.addPeriodicalPublication("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
     }
-    
-     // /**
-     // * Lists and prints all elements in SeriesBooks list
-     // * Duplicate this for other as well.
-     // * just change instanceof **
-     // */
+
+    // /**
+    // * Lists and prints all elements in SeriesBooks list
+    // * Duplicate this for other as well.
+    // * just change instanceof **
+    // */
     // public Iterator<Publications> isAGivenPublication()
     // {
-        // register.getIterator();
-        // ArrayList<Publications>  wantedPublications = new ArrayList<>();
+    // register.getIterator();
+    // ArrayList<Publications>  wantedPublications = new ArrayList<>();
 
-        // for(Publications p : register.getIterator())
-        // {
-            // if (p instanceof Series_Book)
-            // {
-                // wantedPublications.add(p);
-            // }
-        // }
+    // for(Publications p : register.getIterator())
+    // {
+    // if (p instanceof Series_Book)
+    // {
+    // wantedPublications.add(p);
+    // }
+    // }
 
-        // return wantedPublications.iterator();
+    // return wantedPublications.iterator();
     // }
 }
