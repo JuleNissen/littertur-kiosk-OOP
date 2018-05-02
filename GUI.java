@@ -17,6 +17,7 @@ import javafx.stage.Stage;
  */
 public class GUI extends Application {
     TextArea textArea;
+    ApplicationUI ui = new ApplicationUI();
     
     @Override
     public void start(Stage primaryStage) {
@@ -24,12 +25,14 @@ public class GUI extends Application {
         VBox topContainer = new VBox();
         MenuBar mainMenu = createMenus();
         Button dataBtn = new Button("Fill list");
+        textArea = new TextArea();
         
+        dataBtn.setOnAction(e-> fillDummyData());
         
         topContainer.getChildren().add(mainMenu);
         root.setTop(topContainer);
         root.setLeft(dataBtn);
-        root.setRight(textArea);
+        root.setCenter(textArea);
         
         Scene scene = new Scene(root, 300, 250);
         
@@ -75,5 +78,19 @@ public class GUI extends Application {
     private void closeApplication()
     {
         Platform.exit();
+    }
+    
+    /**
+     * Fills textArea with dummy data for user to see
+     */
+    private void fillDummyData()
+    {
+        ui.fillWithDummyData();
+        
+        textArea.appendText(ui.register.something()+"\n");
+        
+        //String liste = ui.register.listAllPublications().toString();
+        //textArea.appendText(ui.register.somebody()+"+n");
+        //textArea.appendText("string");
     }
 }

@@ -100,6 +100,25 @@ public class Register
         }
     }
 
+    public String something()
+    {
+        String result = new String();
+        if(isEmpty())
+        {
+            result = new String("Sorry nothing here");
+        }
+        else 
+        {
+            for(int index = 0; index < listOfPublications.size(); index++)
+            {
+                Publications rm = listOfPublications.get(index);
+                result = new String(rm.summaryAsString());
+            }
+        }
+        
+        return result;
+    }
+    
     /**
      * Search for publications by title using Iterator
      * @param title, the tile of publication you wish to search for
