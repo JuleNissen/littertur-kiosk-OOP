@@ -66,20 +66,20 @@ public class Register
      * Duplicate this for other as well.
      * just change instanceof ** Jobb med denne!!
      */
-    public Iterator<Publications> isAGivenPublication()
-    {
-        ArrayList<Publications>  wantedPublications = new ArrayList<>();
+    // public Iterator<Publications> isAGivenPublication()
+    // {
+        // ArrayList<Publications>  wantedPublications = new ArrayList<>();
 
-        for(Publications p : this.listOfPublications)
-        {
-            if (p instanceof Series_Book)
-            {
-                wantedPublications.add(p);
-            }
-        }
+        // for(Publications p : this.listOfPublications)
+        // {
+            // if (p instanceof Series_Book)
+            // {
+                // wantedPublications.add(p);
+            // }
+        // }
 
-        return wantedPublications.iterator();
-    }
+        // return wantedPublications.iterator();
+    // }
     
     /**
      * List all publications in the registrer
