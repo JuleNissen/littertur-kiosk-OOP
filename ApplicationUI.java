@@ -25,7 +25,7 @@ public class ApplicationUI
             "3. Add a publication",
             "4. Search for publication by title",
             "5. Search for publication by publisher",
-            "6. List a type of publication"
+            // "6. List a type of publication"
 
         };
 
@@ -82,11 +82,11 @@ public class ApplicationUI
                     findPublicationUserDefPubl();
                     break;
 
-                    case 6:
-                    register.isAGivenPublication();
-                    break;
+                    // case 6:
+                    // register.isAGivenPublication();
+                    // break;
 
-                    case 7:
+                    case 6:
                     System.out.println("\nThank you for using Media stand v0.5. Bye!\n");
                     quit = true;
                     break;
