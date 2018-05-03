@@ -18,6 +18,8 @@ import javafx.stage.Stage;
 public class GUI extends Application {
     TextArea textArea;
     ApplicationUI ui = new ApplicationUI();
+        Register register = new Register();
+
     
     @Override
     public void start(Stage primaryStage) {

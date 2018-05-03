@@ -112,7 +112,7 @@ public class Register
             for(int index = 0; index < listOfPublications.size(); index++)
             {
                 Publications rm = listOfPublications.get(index);
-                result = new String(rm.summaryAsString());
+                result += new String(rm.summaryAsString()) + "\n";
             }
         }
         
