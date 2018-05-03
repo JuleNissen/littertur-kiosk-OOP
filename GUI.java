@@ -17,9 +17,7 @@ import javafx.stage.Stage;
  */
 public class GUI extends Application {
     TextArea textArea;
-    ApplicationUI ui = new ApplicationUI();
-        Register register = new Register();
-
+    Register register = new Register();
     
     @Override
     public void start(Stage primaryStage) {
@@ -29,7 +27,7 @@ public class GUI extends Application {
         Button dataBtn = new Button("Fill list");
         textArea = new TextArea();
         
-        dataBtn.setOnAction(e-> fillDummyData());
+        dataBtn.setOnAction(e-> loadDummyData());
         
         topContainer.getChildren().add(mainMenu);
         root.setTop(topContainer);
@@ -85,14 +83,31 @@ public class GUI extends Application {
     /**
      * Fills textArea with dummy data for user to see
      */
-    private void fillDummyData()
+    private void loadDummyData()
     {
-        ui.fillWithDummyData();
-        
-        textArea.appendText(ui.register.something()+"\n");
-        
-        //String liste = ui.register.listAllPublications().toString();
-        //textArea.appendText(ui.register.somebody()+"+n");
-        //textArea.appendText("string");
+        fillWithDummyData();
+        textArea.appendText(register.something()+"\n");
+    }
+    
+        /**
+     * Fills the list with dummy data
+     */    
+    public void fillWithDummyData()
+    {
+        Publications Single_publication = new Single_Book("Berit på jentetur", "Gyldendal", "Bob-Kåre", 2013, 5, 16);
+        register.addLists(Single_publication);
+
+        Publications Series_publication = new Series_Book("Harry Potter", "Sovjet Union", "Per Stalin", 1962, 3, 12);
+        register.addLists(Series_publication);
+
+        Publications Newspapers = new Newspaper("Dagbladet", "Aller Media AS", 25, 2010, 10, 29);
+        register.addLists(Newspapers);
+
+        Publications Comic = new Comics("Donald Duck", "Egmont", 12, "comedy", 1998, 04, 24);
+        register.addLists(Comic);
+
+        Publications Mag = new Magazine("Ingeniøren", "NITO", 01, "Vitenskap", 2012, 01, 04);
+        register.addLists(Mag);
+
     }
 }
